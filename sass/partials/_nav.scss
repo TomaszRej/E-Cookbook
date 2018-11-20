@@ -1,0 +1,80 @@
+.header{
+  margin-top: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $dark;
+}
+
+.nav .nav-link{
+  list-style: none;
+  display: inline-block;
+
+
+}
+.activeNavLink{
+  border-bottom: 3px solid $primary;
+  padding-bottom: 3px;
+}
+
+.nav-link-a {
+  text-decoration: none;
+  margin-right: 20px;
+  color: $dark;
+  font-size: 30px;
+  &:hover{
+    color: $primary;
+  }
+}
+.addRecipeBtn {
+  color: #fff;
+  background-color: $primary;
+  width: 150px;
+  padding: 10px;
+  margin-right: 20px;
+  //border-radius: 10px;
+  outline: none;
+  border: 1px solid #3abba0;
+  text-transform: uppercase;
+  font-size: 24px;
+  &:hover{
+    background-color: #fff;
+    color: $primary;
+    a{
+      color: $primary;
+      font-size: 24px;
+    }
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+
+
+.loginBtn {
+  color: $primary;
+  background-color: #fff;
+  width: 150px;
+  padding: 10px;
+  //border-radius: 10px;
+  outline: none;
+  border: 1px solid #3abba0;
+  text-transform: uppercase;
+  font-size: 24px;
+  &:hover{
+    background-color: $primary;
+    color: #fff;
+    a{
+      color: #fff;
+      font-size: 24px;
+    }
+  }
+  a{
+    color: $primary;
+    text-decoration: none;
+  }
+}

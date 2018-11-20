@@ -1,0 +1,37 @@
+{  "recipes": [
+  {
+    "title": "Pierogi Ruskie",
+    "description": "Fajny przepis na pierogi",
+    "author": "Tomek",
+    "isVegetarian": true,
+    "likes": 10,
+    "timeToPrepare": 90,
+    "ingridients": ["mąka", "ziemniaki", "ser biały", "sól", "pieprz"],
+    "instructions": ["weż mąke", "ugnieć ciasto", "przygotuj farsz", "ugotuj w wodzie"]
+  },
+  {
+    "title": "Kotlety mielone",
+    "description": "Fajny przepis na kotlety mielone",
+    "author": "Krzysiek",
+    "isVegetarian": false,
+    "likes": 0,
+    "timeToPrepare": 90,
+    "ingridients": ["mieso mielone", "sól", "pieprz"],
+    "instructions": ["wymieszaj mieso z jajkiem", "ugnieć ciasto", "usmaż na patelni" ]
+  }
+],
+  "users": [{
+    "id": 1,
+    "nick": "Tomek",
+    "email": "tomaszrej@gmail.com",
+    "password": "Tomek"
+  },
+    {
+      "id": 2,
+      "nick": "Puchatek",
+      "email": "puchatek@gmail.com",
+      "password": "Puchatek"
+    }
+  ]
+
+}
