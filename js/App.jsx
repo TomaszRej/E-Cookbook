@@ -16,12 +16,24 @@ import style from '../sass/style.scss';
 class App extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             isUserLogged: false,
-            userName: 'test',
-            data: []
+            userName: '',
+            data: [],
+
         }
     }
+
+    checkUserName = (name) => {
+        this.setState({
+            userName: name,
+        })
+    }
+    // checkUserPassword = (pass) => {
+    //    zapytac o user password czy input kontrolowany czy jak ?
+
+    // }
 
     componentDidMount() {
         fetch('http://localhost:3000/db')
@@ -29,7 +41,7 @@ class App extends React.Component {
                 if (resp.ok) {
                     return resp.json();
                 }
-                throw new Error('Bład?!');
+                throw new Error('Error message?!');
             })
             .then(data => {
                 this.setState({
@@ -50,13 +62,14 @@ class App extends React.Component {
                 <div>
                     <Nav/>
                     <Switch>
-                        <Route exact path='/' component={Home}/>
+                        {/*<Route exact path='/' component={Home}/>*/}
+                        <Route exact path='/' render={(props) => <Home {...props} data={this.state.data}/>}/>
                         <Route exact path='/ulubione' component={Favorites}/>
-                        {/*<Route path='/pricing' component={Pricing} />*/}
-                        {/*<Route path='/logowanie' component={Login userName={this.state.userName}}/>*/}
+
                         <Route
                             path='/logowanie'
-                            render={(props) => <Login {...props} userName={this.state.userName}/>}
+                            render={(props) => <Login {...props} userName={this.state.userName}
+                                                      setUserName={(name) => this.checkUserName(name)}/>}
                         />
                     </Switch>
                 </div>

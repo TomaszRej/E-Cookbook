@@ -16,8 +16,8 @@ class Nav extends React.Component {
                     </ul>
                 </nav>
                 <div>
-                    <button className='addRecipeBtn'><Link  to='/dodawanieProduktu'>Dodaj</Link></button>
-                    <button className='loginBtn'><Link  to='/logowanie'>Zaloguj</Link></button>
+                    <button className='addRecipeBtn'><NavLink  to='/dodawanieProduktu'>Dodaj</NavLink></button>
+                    <button className='loginBtn'><NavLink  to='/logowanie'>Zaloguj</NavLink></button>
                 </div>
             </header>
         );

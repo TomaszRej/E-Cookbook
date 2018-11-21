@@ -22,13 +22,13 @@
 ],
   "users": [{
     "id": 1,
-    "nick": "Tomek",
+    "name": "Tomek",
     "email": "tomaszrej@gmail.com",
     "password": "Tomek"
   },
     {
       "id": 2,
-      "nick": "Puchatek",
+      "name": "Puchatek",
       "email": "puchatek@gmail.com",
       "password": "Puchatek"
     }
