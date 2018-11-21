@@ -1,0 +1,51 @@
+.recipe{
+  width: 500px;
+  height: 510px;
+  margin: 30px auto;
+   box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+  .img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    //width: 500px;
+    //height: 400px;
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+  footer{
+    padding: 10px;
+    text-align: center;
+    p{
+      margin-bottom: 5px;
+      font-size:30px;
+      //font-weight: bold;
+    }
+
+    .icons {
+      display: flex;
+      color: gray;
+      font-size: 30px;
+      margin-bottom: 20px;
+      margin-left:10px;
+    }
+    //.hot{
+    //  i{
+    //    margin-left:10px;
+    //  }
+    //}
+  }
+  span{
+    i{
+      margin-right: 10px;
+    }
+  }
+  .time{
+    color: $dark;
+  }
+  .heart{
+    margin-left:10px;
+  }
+
+}
+

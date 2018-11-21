@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {
     HashRouter,
     Route,
+    Redirect,
     Link,
     Switch,
     NavLink,
@@ -11,6 +12,7 @@ import Home from './components/Home.jsx';
 import Favorites from './components/Favorites.jsx';
 import Login from './components/Login.jsx';
 import Nav from './components/Nav.jsx';
+import Recipe from './components/Recipe.jsx'
 import style from '../sass/style.scss';
 
 class App extends React.Component {
@@ -19,24 +21,36 @@ class App extends React.Component {
 
         this.state = {
             isUserLogged: false,
-            userName: '',
+            globalUserName: '',
             data: [],
 
         }
     }
 
-    checkUserName = (name) => {
+    setUserName = (name) => {
+
         this.setState({
-            userName: name,
+            globalUserName: name,
+        },()=>{
+
         })
+
+
     }
+
+
+
+
+
+
+
     // checkUserPassword = (pass) => {
     //    zapytac o user password czy input kontrolowany czy jak ?
 
     // }
 
     componentDidMount() {
-        fetch('http://localhost:3000/db')
+        fetch('http://localhost:3000/recipes')
             .then(resp => {
                 if (resp.ok) {
                     return resp.json();
@@ -47,7 +61,7 @@ class App extends React.Component {
                 this.setState({
                     data: data
                 }, () => {
-                    console.log(this.state.data, 'dane state callback z jsonserver');
+                    //console.log(this.state.data, 'dane state callback z jsonserver');
                 });
             })
             .catch(err => console.log(err));
@@ -60,16 +74,17 @@ class App extends React.Component {
         return (
             <HashRouter>
                 <div>
-                    <Nav/>
+                    <Nav globalUserName={this.state.globalUserName} setUserName={(name) => this.setUserName(name)}/>
                     <Switch>
                         {/*<Route exact path='/' component={Home}/>*/}
                         <Route exact path='/' render={(props) => <Home {...props} data={this.state.data}/>}/>
                         <Route exact path='/ulubione' component={Favorites}/>
+                        <Route exact path='/recipe/:id' component={Recipe}/>
 
                         <Route
                             path='/logowanie'
-                            render={(props) => <Login {...props} userName={this.state.userName}
-                                                      setUserName={(name) => this.checkUserName(name)}/>}
+                            render={(props) => <Login {...props} userName={this.state.globalUserName}
+                                                      setUserName={(name) => this.setUserName(name)}/>}
                         />
                     </Switch>
                 </div>

@@ -1,37 +1,95 @@
-{  "recipes": [
-  {
-    "title": "Pierogi Ruskie",
-    "description": "Fajny przepis na pierogi",
-    "author": "Tomek",
-    "isVegetarian": true,
-    "likes": 10,
-    "timeToPrepare": 90,
-    "ingridients": ["mąka", "ziemniaki", "ser biały", "sól", "pieprz"],
-    "instructions": ["weż mąke", "ugnieć ciasto", "przygotuj farsz", "ugotuj w wodzie"]
-  },
-  {
-    "title": "Kotlety mielone",
-    "description": "Fajny przepis na kotlety mielone",
-    "author": "Krzysiek",
-    "isVegetarian": false,
-    "likes": 0,
-    "timeToPrepare": 90,
-    "ingridients": ["mieso mielone", "sól", "pieprz"],
-    "instructions": ["wymieszaj mieso z jajkiem", "ugnieć ciasto", "usmaż na patelni" ]
-  }
-],
-  "users": [{
-    "id": 1,
-    "name": "Tomek",
-    "email": "tomaszrej@gmail.com",
-    "password": "Tomek"
-  },
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Pizza",
+      "description": "Fajny przepis na pierogi",
+      "author": "Tomek",
+      "isVegetarian": true,
+      "link": "pizza.jpg",
+      "likes": 10,
+      "timeToPrepare": 90,
+      "ingridients": [
+        "mąka",
+        "ziemniaki",
+        "ser biały",
+        "sól",
+        "pieprz"
+      ],
+      "instructions": [
+        "weż mąke",
+        "ugnieć ciasto",
+        "przygotuj farsz",
+        "ugotuj w wodzie"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Kotlety mielone",
+      "description": "Fajny przepis na kotlety mielone",
+      "author": "Krzysiek",
+      "isVegetarian": false,
+      "link": "hamburger.jpg",
+      "likes": 0,
+      "timeToPrepare": 90,
+      "ingridients": [
+        "mieso mielone",
+        "sól",
+        "pieprz"
+      ],
+      "instructions": [
+        "wymieszaj mieso z jajkiem",
+        "ugnieć ciasto",
+        "usmaż na patelni"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Tomek",
+      "email": "tomaszrej@gmail.com",
+      "password": "Tomek"
+    },
     {
       "id": 2,
       "name": "Puchatek",
       "email": "puchatek@gmail.com",
       "password": "Puchatek"
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "name": "this.state.newUserName",
+      "password": "password",
+      "id": 6
+    },
+    {
+      "name": "tess",
+      "password": "ss",
+      "id": 7
+    },
+    {
+      "name": "tesss",
+      "password": "s",
+      "id": 8
+    },
+    {
+      "name": "Iwona",
+      "password": "Iwona",
+      "id": 9
+    },
+    {
+      "name": "Leszek",
+      "password": "Leszek",
+      "id": 10
     }
   ]
-
 }
