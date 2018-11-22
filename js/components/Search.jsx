@@ -38,6 +38,13 @@ class Search extends React.Component {
             })
         }
     }
+    handleAddClick = () => {
+        const valueForFilter = this.state.foodEntered;
+
+        if(typeof this.props.filterRecipes === 'function'){
+            this.props.filterRecipes(valueForFilter);
+        }
+    }
     handleDeleteClick = (e) => {
 
         const id = e.currentTarget.dataset.index;
@@ -60,13 +67,14 @@ class Search extends React.Component {
 
         return (
             <div className='search'>
+                <div style={{backgroundImage: 'url("./images/logo.png")'}}className='logo'></div>
                 <h2>Co masz w lodówce?</h2>                <form onSubmit={(e) => {
                     this.handleForm(e)
                 }} className="food">
                     <input onChange={(e) => {
                         this.handleFoodInput(e)
                     }} id="foodInput" type="text" value={this.state.foodEntered}/>
-                    <button className="foodBtn">Dodaj</button>
+                    <button onClick={this.handleAddClick} className="foodBtn">Dodaj</button>
                 </form>
 
                 <ul className='foodList'>

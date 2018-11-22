@@ -50,8 +50,6 @@ class Recipe extends  React.Component {
             <ul>{ingredients}</ul>
                 </div>
                 <div><h4>Instrukcje</h4><ul>{instructions}</ul></div></div>;
-
-            console.log(this.state.data[el],'[el]');
         }
         //console.log(this.state.data.isVegetarian);
 
@@ -60,6 +58,7 @@ class Recipe extends  React.Component {
         return (
             <div>
                 {element}
+
             </div>
         );
     }

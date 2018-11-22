@@ -19,7 +19,7 @@ class Recipes extends React.Component {
         const newLikes = this.props.data[index - 1].likes + 1;
 
         const data = this.props.data.slice();
-        console.log(data[index - 1].whoLikes, 'dataDATA');
+        //console.log(data[index - 1].whoLikes, 'dataDATA');
 
         fetch(`http://localhost:3000/recipes/${index}`, {
             method: 'PATCH',
@@ -45,7 +45,15 @@ class Recipes extends React.Component {
 
     }
 
+    deleteItem = () => {
+        console.log('test usuwania');
+        // Do zrobienia
+
+
+    }
+
     render() {
+
         const recipes = this.props.data;
         const arr = [];
         let add = true;
@@ -61,15 +69,17 @@ class Recipes extends React.Component {
                 height: '400px'
             }
 
-            const element = <div key={el.id} className='recipe'>
+            const element = <div key={el.id} style={{position: 'relative'}}className='recipe'>
+                <div onClick={this.deleteItem} style={{display:el.author == this.props.globalUserName?'block':'none',position: 'absolute',zIndex:'1'}}>Usuń</div>
                 <Link to={`/recipe/${el.id}`}>
                     <div className='img' style={style}/>
                 </Link>
+
                 <footer>
                     <p>{el.title}</p>
                     <div className='icons'>
-                        <span><i style={{color: el.isVegetarian ? 'green' : 'gray'}} className="fas fa-leaf"/></span>
-                        <span className='hot'><i className="fab fa-hotjar"/><i className="fab fa-hotjar"/><i
+                        <span className='leaf'><i style={{color: el.isVegetarian ? 'green' : 'gray'}} className="fas fa-leaf"/></span>
+                        <span className='hot'><i style={{color: el.hotLvl !== 'Łagodny'?'red':'gray'}} className="fab fa-hotjar"/><i style={{color: (el.hotLvl !== 'Łagodny')&&(el.hotLvl !== 'Lekko Ostry')?'red':'gray'}}  className="fab fa-hotjar"/><i style={{color: el.hotLvl === 'Mega Ostry'?'red':'gray'}}
                             className="fab fa-hotjar"/>
                     </span>
                         <span className='time'><i className="far fa-clock"/><span>{el.timeToPrepare}</span>

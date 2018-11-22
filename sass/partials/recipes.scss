@@ -27,7 +27,7 @@
       color: gray;
       font-size: 30px;
       margin-bottom: 20px;
-      margin-left:10px;
+      margin-left:50px;
     }
     //.hot{
     //  i{
@@ -40,11 +40,18 @@
       margin-right: 10px;
     }
   }
+  .leaf{
+    margin-right:30px;
+  }
   .time{
     color: $dark;
+    margin-right:30px;
+  }
+  .hot{
+    margin-right:30px;
   }
   .heart{
-    margin-left:10px;
+    margin-right:30px;
   }
 
 }

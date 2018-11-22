@@ -1,15 +1,27 @@
 .search{
   width: 700px;
   margin: 35px auto 35px;
-  border: 1px solid $dark;
+  box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+  //border: 1px solid $dark;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  .logo{
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+
+    margin-top: -80px;
+  }
 
   h2{
     color: $primary;
     font-size: 34px;
+    margin-top: -55px;
     margin-bottom: 10px;
   }
   .food{

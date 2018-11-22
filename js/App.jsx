@@ -24,8 +24,6 @@ class App extends React.Component {
             // isUserLogged: false,
             globalUserName: '',
             data: [],
-            favorites: [],
-
         }
     }
 
@@ -38,26 +36,17 @@ class App extends React.Component {
     }
 
     updateHearts = (id, likes) => {
-        // const data = this.state.data.slice();
-        // data.forEach((el) => {
-        //             if (id == el.id) {
-        //                 el.likes = likes
-        //             }
-        // })
-        //
-        // this.setState({
-        //     data: data
-        // })
-        const arr =this.state.favorites.slice();
         const data = this.state.data.slice();
-        data.forEach((el)=>{
-            if(id == el.id){
-                arr.push(el);
-            }
+        data.forEach((el) => {
+                    if (id == el.id) {
+                        el.likes = likes
+                    }
         })
+
         this.setState({
-            favorites: arr
+            data: data
         })
+
     }
 
     setUserName = (name) => {
@@ -66,6 +55,27 @@ class App extends React.Component {
             globalUserName: name,
         }, () => {
 
+        })
+    }
+
+    filterRecipes = (ingredient) => {
+        const data = this.state.data.slice();
+        const arr = [];
+        console.log(ingredient,'data w metodzie filter');
+        console.log(data,'wmet filter');
+        data.forEach((el) =>{
+            //console.log(el.ingredients);
+            for(const i of el.ingredients){
+                //console.log(i,'pojedynczy skladnik');
+                if(i === ingredient){
+                    arr.push(el);
+                }
+            }
+        });
+        //data.filter((el)=>{el.ingri === ingredient})
+
+        this.setState({
+            data: arr
         })
     }
 
@@ -110,7 +120,7 @@ class App extends React.Component {
                     <Switch>
                         {/*<Route exact path='/' component={Home}/>*/}
                         <Route exact path='/'
-                               render={(props) => <Home {...props} data={this.state.data} globalUserName={this.state.globalUserName} updateData={(obj) => {
+                               render={(props) => <Home {...props} filterRecipes={this.filterRecipes} data={this.state.data} globalUserName={this.state.globalUserName} updateData={(obj) => {
                                    this.updateData(obj)
                                }} updateHearts={this.updateHearts}/>}/>
 

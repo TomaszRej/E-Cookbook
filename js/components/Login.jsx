@@ -59,7 +59,13 @@ class Login extends React.Component {
     validateLogin = (e) => {
         e.preventDefault();
         const errors = [];
-
+        if(this.state.userName.length === 0 ){
+            errors.push('Wprowadż hasło i nazwę użytkownika!!');
+            this.setState({
+                errors: errors
+            })
+            return;
+        }
         fetch(`http://localhost:3000/users?name=${this.state.userName}`,)
             .then(resp => {
                 if (resp.ok) {
@@ -68,12 +74,6 @@ class Login extends React.Component {
                 throw new Error('Error message?!');
             })
             .then(user => {
-
-                if(this.state.register){
-                    console.log('user istnieje');
-                    errors.push('Taki użytkownik już istnieje!!!');
-
-                }else{
                     if(user[0].password === this.state.password){
                         console.log('prawidlowe chaslo');
                         console.log(this.state.userName);
@@ -84,9 +84,6 @@ class Login extends React.Component {
                         //console.log('podales niepoprawne chaslo');
                         errors.push('Podałeś nieprawidłowe hasło!!!');
                     }
-                }
-
-
 
                 console.log(errors.length, 'dlugosc tablicy z bledami');
                 if(errors.length !== 0) {
@@ -139,6 +136,13 @@ class Login extends React.Component {
     validateRegister = (e) => {
         e.preventDefault();
         const errors = [];
+        if(this.state.newUserName.length === 0 ){
+            errors.push('Podaj nową nazwę użytkownika!!');
+            this.setState({
+                errors: errors
+            })
+            return;
+        }
 
         fetch(`http://localhost:3000/users?name=${this.state.newUserName}`)
             .then(resp => {

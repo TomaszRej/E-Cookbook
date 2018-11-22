@@ -10,9 +10,14 @@ class FilterSection extends React.Component{
     render() {
         return (
             <div className='onlyVegetarianArea'>
-                <input onChange={this.handleChange} id="onlyVegetarian" type="checkbox"
-                       checked={this.props.onlyVegetarianChecked}/>
-                <label htmlFor="onlyVegetarian">tylko wegetarianskie</label>
+                {/*<input onChange={this.handleChange} id="onlyVegetarian" type="checkbox"*/}
+                       {/*checked={this.props.onlyVegetarianChecked}/>*/}
+
+
+                    <input type="checkbox" checked={this.props.onlyVegetarianChecked} onChange={this.handleChange}/>
+<span>tylko wegetarianskie</span>
+
+
             </div>
         );
     }
