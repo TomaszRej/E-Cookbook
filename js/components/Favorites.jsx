@@ -3,7 +3,13 @@ import React from 'react';
 class Favorites extends React.Component {
 
     render() {
-        return <h2>Twoje ulubione przepisy</h2>
+        const favorites = this.props.favorites.map((el)=>{<li key={el.id}><a>{el.title}</a></li>})
+        return <div> <h2>Twoje ulubione przepisy</h2>
+            <ul>
+                {favorites}
+            </ul>
+
+        </div>
     }
 }
 

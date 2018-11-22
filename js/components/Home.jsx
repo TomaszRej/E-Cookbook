@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search.jsx';
 import Recipes from  './Recipes.jsx';
+import FilterSection from './FilterSection.jsx';
 
 class Home extends React.Component {
     constructor(props){
@@ -31,9 +32,9 @@ class Home extends React.Component {
         })
     }
 
-    handleCheckboxChange = (e) => {
+    handleCheckboxChange = (event) => {
         this.setState({
-            onlyVegetarianChecked: e.target.checked,
+            onlyVegetarianChecked: event,
         })
     }
 
@@ -44,14 +45,9 @@ class Home extends React.Component {
         return (<div className='container'>
             <Search addToFoodList={(food)=>{this.addToFoodList(food)}} removeFromFoodList={(id)=>{this.removeFromFoodList(id)}} foodList={this.state.foodList}/>
 
+            <FilterSection handleCheckboxChange={this.handleCheckboxChange}  checked={this.state.onlyVegetarianChecked}/>
 
-            <div className='onlyVegetarianArea'>
-                <input onChange={this.handleCheckboxChange} id="onlyVegetarian" type="checkbox"
-                       checked={this.state.onlyVegetarianChecked}/>
-                <label htmlFor="onlyVegetarian">tylko wegetarianskie</label>
-            </div>
-
-            <Recipes data={this.props.data}/>
+            <Recipes updateHearts={this.props.updateHearts} globalUserName={this.props.globalUserName} data={this.props.data} onlyVegetarianChecked={this.state.onlyVegetarianChecked}/>
         </div>);
     }
 }

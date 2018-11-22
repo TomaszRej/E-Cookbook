@@ -8,6 +8,7 @@ class Nav extends React.Component {
         console.log('test klik');
         if (this.props.globalUserName) {
             if (typeof this.props.setUserName === 'function') {
+
                 this.props.setUserName('');
             }
         }
@@ -18,6 +19,7 @@ class Nav extends React.Component {
             display: this.props.globalUserName ? 'inline-block' : 'none',
         }
         const text = this.props.globalUserName ? 'Wyloguj' : 'Zaloguj';
+        const styleForAddBtn = {display: !this.props.globalUserName&& 'none'};
 
         return (
 
@@ -28,16 +30,16 @@ class Nav extends React.Component {
                         <li className='nav-link'><NavLink className='nav-link-a' activeClassName='activeNavLink' exact
                                                           to='/'>Strona
                             główna </NavLink></li>
-                        <li style={style} className='nav-link'><NavLink className='nav-link-a'
-                                                                        activeClassName='activeNavLink' exact
-                                                                        to='/ulubione'>Ulubione</NavLink></li>
+                        {/*<li style={style} className='nav-link'><NavLink className='nav-link-a'*/}
+                                                                        {/*activeClassName='activeNavLink' exact*/}
+                                                                        {/*to='/ulubione'>Ulubione</NavLink></li>*/}
                     </ul>
                 </nav>
                 <div>
-                    <div className='userIcon'><i className="far fa-user"></i>{  this.props.globalUserName}</div>
+                    <div className='userIcon'><i className="far fa-user"></i>{ this.props.globalUserName? this.props.globalUserName: '___________'}</div>
                 </div>
                 <div>
-                    <button className='addRecipeBtn'><NavLink to='/dodawanieProduktu'>Dodaj</NavLink></button>
+                    <button style={styleForAddBtn}className='addRecipeBtn'><NavLink to='/dodawanieProduktu'>Dodaj</NavLink></button>
                     <button onClick={this.handleLoginClick} className='loginBtn'><NavLink
                         to='/logowanie'>{text}</NavLink></button>
                 </div>

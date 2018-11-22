@@ -12,7 +12,8 @@ import Home from './components/Home.jsx';
 import Favorites from './components/Favorites.jsx';
 import Login from './components/Login.jsx';
 import Nav from './components/Nav.jsx';
-import Recipe from './components/Recipe.jsx'
+import Recipe from './components/Recipe.jsx';
+import AddProduct from './components/AddProduct.jsx';
 import style from '../sass/style.scss';
 
 class App extends React.Component {
@@ -20,28 +21,53 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            isUserLogged: false,
+            // isUserLogged: false,
             globalUserName: '',
             data: [],
+            favorites: [],
 
         }
     }
 
-    setUserName = (name) => {
-
+    updateData = (obj) => {
+        const data = this.state.data.slice();
+        data.push(obj);
         this.setState({
-            globalUserName: name,
-        },()=>{
-
+            data: data
         })
-
-
     }
 
+    updateHearts = (id, likes) => {
+        // const data = this.state.data.slice();
+        // data.forEach((el) => {
+        //             if (id == el.id) {
+        //                 el.likes = likes
+        //             }
+        // })
+        //
+        // this.setState({
+        //     data: data
+        // })
+        const arr =this.state.favorites.slice();
+        const data = this.state.data.slice();
+        data.forEach((el)=>{
+            if(id == el.id){
+                arr.push(el);
+            }
+        })
+        this.setState({
+            favorites: arr
+        })
+    }
 
+    setUserName = (name) => {
+        localStorage.removeItem('savedName');
+        this.setState({
+            globalUserName: name,
+        }, () => {
 
-
-
+        })
+    }
 
 
     // checkUserPassword = (pass) => {
@@ -50,6 +76,10 @@ class App extends React.Component {
     // }
 
     componentDidMount() {
+
+        const userName = localStorage.getItem("savedName");
+
+
         fetch('http://localhost:3000/recipes')
             .then(resp => {
                 if (resp.ok) {
@@ -59,7 +89,8 @@ class App extends React.Component {
             })
             .then(data => {
                 this.setState({
-                    data: data
+                    data: data,
+                    globalUserName: userName
                 }, () => {
                     //console.log(this.state.data, 'dane state callback z jsonserver');
                 });
@@ -75,12 +106,23 @@ class App extends React.Component {
             <HashRouter>
                 <div>
                     <Nav globalUserName={this.state.globalUserName} setUserName={(name) => this.setUserName(name)}/>
+
                     <Switch>
                         {/*<Route exact path='/' component={Home}/>*/}
-                        <Route exact path='/' render={(props) => <Home {...props} data={this.state.data}/>}/>
-                        <Route exact path='/ulubione' component={Favorites}/>
-                        <Route exact path='/recipe/:id' component={Recipe}/>
+                        <Route exact path='/'
+                               render={(props) => <Home {...props} data={this.state.data} globalUserName={this.state.globalUserName} updateData={(obj) => {
+                                   this.updateData(obj)
+                               }} updateHearts={this.updateHearts}/>}/>
 
+
+
+                        <Route exact path='/recipe/:id' component={Recipe}/>
+                        {/*<Route path='/dodawanieProduktu' component={AddProduct globalUser}/>*/}
+
+                        <Route exact path='/dodawanieProduktu'
+                               render={(props) => <AddProduct {...props} updateData={(obj) => {
+                                   this.updateData(obj)
+                               }} globalUserName={this.state.globalUserName}/>}/>
                         <Route
                             path='/logowanie'
                             render={(props) => <Login {...props} userName={this.state.globalUserName}

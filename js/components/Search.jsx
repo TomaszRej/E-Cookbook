@@ -29,12 +29,14 @@ class Search extends React.Component {
     handleForm = (e) => {
         e.preventDefault();
         console.log('handle submit form ');
-        if (typeof this.props.addToFoodList === 'function') {
-            this.props.addToFoodList(this.state.foodEntered);
+        if(this.state.foodEntered !== '') {
+            if (typeof this.props.addToFoodList === 'function') {
+                this.props.addToFoodList(this.state.foodEntered);
+            }
+            this.setState({
+                foodEntered: '',
+            })
         }
-        this.setState({
-            foodEntered: '',
-        })
     }
     handleDeleteClick = (e) => {
 
@@ -58,8 +60,7 @@ class Search extends React.Component {
 
         return (
             <div className='search'>
-                <h2>Co masz w lodówce?</h2>
-                <form onSubmit={(e) => {
+                <h2>Co masz w lodówce?</h2>                <form onSubmit={(e) => {
                     this.handleForm(e)
                 }} className="food">
                     <input onChange={(e) => {

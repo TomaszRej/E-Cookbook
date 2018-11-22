@@ -76,7 +76,9 @@ class Login extends React.Component {
                 }else{
                     if(user[0].password === this.state.password){
                         console.log('prawidlowe chaslo');
-                        // TODO zrobic cala logike
+                        console.log(this.state.userName);
+                        const userName = this.state.userName;
+                        localStorage.setItem('savedName', userName);
 
                     }else {
                         //console.log('podales niepoprawne chaslo');
@@ -89,7 +91,6 @@ class Login extends React.Component {
                 console.log(errors.length, 'dlugosc tablicy z bledami');
                 if(errors.length !== 0) {
                     this.setState({
-
                         errors: errors
                     })
                 }else {
@@ -110,6 +111,7 @@ class Login extends React.Component {
                         errors: errors
                     })
                 }else {
+
                     this.setState({
                         redirect: '/',
                         errors: errors
@@ -138,7 +140,7 @@ class Login extends React.Component {
         e.preventDefault();
         const errors = [];
 
-        fetch(`http://localhost:3000/users?name=${this.state.newUserName}`,)
+        fetch(`http://localhost:3000/users?name=${this.state.newUserName}`)
             .then(resp => {
                 if (resp.ok) {
                     return resp.json();

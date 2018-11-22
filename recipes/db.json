@@ -1,47 +1,57 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "title": "Pizza",
-      "description": "Fajny przepis na pierogi",
       "author": "Tomek",
-      "isVegetarian": true,
-      "link": "pizza.jpg",
-      "likes": 10,
-      "timeToPrepare": 90,
-      "ingridients": [
-        "mąka",
-        "ziemniaki",
-        "ser biały",
-        "sól",
-        "pieprz"
-      ],
-      "instructions": [
-        "weż mąke",
-        "ugnieć ciasto",
-        "przygotuj farsz",
-        "ugotuj w wodzie"
-      ]
+      "title": "ter",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
+      "likes": 4,
+      "whoLikes": [],
+      "ingredients": [],
+      "instructions": [],
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Kotlety mielone",
-      "description": "Fajny przepis na kotlety mielone",
-      "author": "Krzysiek",
-      "isVegetarian": false,
-      "link": "hamburger.jpg",
-      "likes": 0,
-      "timeToPrepare": 90,
-      "ingridients": [
-        "mieso mielone",
-        "sól",
-        "pieprz"
+      "author": "Tomek",
+      "title": "Pierogi",
+      "description": "Fajny przpis na pierogi",
+      "timeToPrepare": "20",
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": true,
+      "link": "https://via.placeholder.com/150",
+      "likes": 2,
+      "whoLikes": [],
+      "ingredients": [
+        "d"
       ],
       "instructions": [
-        "wymieszaj mieso z jajkiem",
-        "ugnieć ciasto",
-        "usmaż na patelni"
-      ]
+        "dsd"
+      ],
+      "id": 2
+    },
+    {
+      "author": "Tomek",
+      "title": "Jajecznica",
+      "description": "hiehieheihapeihapihpiha",
+      "timeToPrepare": "10",
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": true,
+      "link": "https://via.placeholder.com/150",
+      "likes": 1,
+      "whoLikes": [],
+      "ingredients": [
+        "jajka",
+        "cebula",
+        "maslo"
+      ],
+      "instructions": [
+        "rozbij jajka",
+        "usmarz jajka z cebuka"
+      ],
+      "id": 3
     }
   ],
   "users": [
@@ -90,6 +100,16 @@
       "name": "Leszek",
       "password": "Leszek",
       "id": 10
+    },
+    {
+      "name": "Krzysiu",
+      "password": "Krzysiu",
+      "id": 11
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 12
     }
   ]
 }
