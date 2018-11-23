@@ -6,6 +6,7 @@ class Search extends React.Component {
 
         this.state = {
             foodEntered: '',
+            foodEnteredTable: [],
         }
     }
 
@@ -40,20 +41,52 @@ class Search extends React.Component {
     }
     handleAddClick = () => {
         const valueForFilter = this.state.foodEntered;
+        const foodTable = this.state.foodEnteredTable.slice();
+        foodTable.push(valueForFilter);
 
-        if(typeof this.props.filterRecipes === 'function'){
-            this.props.filterRecipes(valueForFilter);
-        }
+        this.setState({
+            foodEnteredTable: foodTable
+
+        },()=>{
+            // if(typeof this.props.filterRecipes === 'function'){
+            //     this.props.filterRecipes(this.state.foodEnteredTable);
+            // }
+            if(typeof this.props.setIngredientsState ==='function'){
+                this.props.setIngredientsState(this.state.foodEnteredTable);
+            }
+        })
+
+
     }
+
+
     handleDeleteClick = (e) => {
 
         const id = e.currentTarget.dataset.index;
         //console.log(this.props.removeFromFoodList(id));
+        const valueForFilter = this.state.foodEntered;
+        const foodTable = this.state.foodEnteredTable.slice();
+        const itemToRemove = e.currentTarget.innerText;
 
+        console.log(itemToRemove,'element do usuniecia');
+
+        foodTable.splice(id,1);
 
         if (typeof this.props.removeFromFoodList === 'function') {
             this.props.removeFromFoodList(id);
         }
+
+        this.setState({
+            foodEnteredTable: foodTable
+
+        },()=>{
+            // if(typeof this.props.filterRecipes === 'function'){
+            //     this.props.filterRecipes(this.state.foodEnteredTable);
+            // }
+            if(typeof this.props.setIngredientsState ==='function'){
+                this.props.setIngredientsState(this.state.foodEnteredTable);
+            }
+        })
 
 
     }
@@ -68,7 +101,7 @@ class Search extends React.Component {
         return (
             <div className='search'>
                 <div style={{backgroundImage: 'url("./images/logo.png")'}}className='logo'></div>
-                <h2>Co masz w lodówce?</h2>                <form onSubmit={(e) => {
+                <h2>Co masz w lodówce?</h2>  <form onSubmit={(e) => {
                     this.handleForm(e)
                 }} className="food">
                     <input onChange={(e) => {

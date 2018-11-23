@@ -24,6 +24,7 @@ class App extends React.Component {
             // isUserLogged: false,
             globalUserName: '',
             data: [],
+            ingredients: []
         }
     }
 
@@ -32,6 +33,27 @@ class App extends React.Component {
         data.push(obj);
         this.setState({
             data: data
+        })
+    }
+    updateRecipes = (id) => {
+        const data = this.state.data.slice();
+
+        // data.filter((el)=>{
+        //     console.log(id,el.id);
+        //     return Number(el.id) != id;
+        // })
+        const arr = [];
+        data.forEach((el) => {
+            if(el.id != id){
+                arr.push(el);
+            }
+        })
+
+        console.log(data,'xxxxxxxxxxxxxxxxxx');
+
+        console.log("updateRECIPES");
+        this.setState({
+            data: arr
         })
     }
 
@@ -48,6 +70,24 @@ class App extends React.Component {
         })
 
     }
+    updateWhoLikes = (id,whoLikes) => {
+        console.log("''''''''''''''''''");
+        console.log(id);
+        console.log(whoLikes);
+        console.log('123456789900');
+
+        const data = this.state.data.slice();
+        data.forEach((el) => {
+            if (id == el.id) {
+                el.whoLikes = whoLikes;
+            }
+        })
+
+        this.setState({
+            data: data
+        })
+        console.log(';;;;;;;;;;;;;;;;;;;;;;;;;;');
+    }
 
     setUserName = (name) => {
         localStorage.removeItem('savedName');
@@ -58,32 +98,50 @@ class App extends React.Component {
         })
     }
 
-    filterRecipes = (ingredient) => {
-        const data = this.state.data.slice();
-        const arr = [];
-        console.log(ingredient,'data w metodzie filter');
-        console.log(data,'wmet filter');
-        data.forEach((el) =>{
-            //console.log(el.ingredients);
-            for(const i of el.ingredients){
-                //console.log(i,'pojedynczy skladnik');
-                if(i === ingredient){
-                    arr.push(el);
-                }
-            }
-        });
-        //data.filter((el)=>{el.ingri === ingredient})
+    // filterRecipes = (ingredient) => {
+    //     const data = this.state.data.slice();
+    //     const arr = [];
+    //     console.log(ingredient,'data w metodzie filter');
+    //     console.log(data,'wmet filter');
+    //     data.forEach((el) =>{
+    //         for(const i of el.ingredients){
+    //             if(i === ingredient){
+    //                 arr.push(el);
+    //             }
+    //         }
+    //     });
+    //     this.setState({
+    //         data: arr
+    //     })
+    // }
 
+    setIngredientsState = (ingredients) => {
+console.log(this.state.ingredients,'skladniki w set ingredients');
+        const ints = ingredients.slice();
         this.setState({
-            data: arr
+            ingredients: ints
         })
     }
 
+    filterRecipes = () => {
+        const data = this.state.data.map((recipe)=>{
+            recipe.sort = 0;
+            console.log(this.state.ingredients,'skladniki');
+            this.state.ingredients.forEach((i)=>{
+                console.log(recipe.ingredients,i,'=======');
+                if(recipe.ingredients.indexOf(i) >= 0){
+                    recipe.sort++;
+                }
+            })
 
-    // checkUserPassword = (pass) => {
-    //    zapytac o user password czy input kontrolowany czy jak ?
+            return recipe;
+        });
 
-    // }
+        return data;
+
+    }
+
+
 
     componentDidMount() {
 
@@ -120,9 +178,9 @@ class App extends React.Component {
                     <Switch>
                         {/*<Route exact path='/' component={Home}/>*/}
                         <Route exact path='/'
-                               render={(props) => <Home {...props} filterRecipes={this.filterRecipes} data={this.state.data} globalUserName={this.state.globalUserName} updateData={(obj) => {
+                               render={(props) => <Home {...props} filterRecipes={this.filterRecipes} data={this.state.data} setIngredientsState={this.setIngredientsState} updateWhoLikes={this.updateWhoLikes} globalUserName={this.state.globalUserName} updateData={(obj) => {
                                    this.updateData(obj)
-                               }} updateHearts={this.updateHearts}/>}/>
+                               }} updateHearts={this.updateHearts} updateRecipes={this.updateRecipes}/>}/>
 
 
 
@@ -132,7 +190,7 @@ class App extends React.Component {
                         <Route exact path='/dodawanieProduktu'
                                render={(props) => <AddProduct {...props} updateData={(obj) => {
                                    this.updateData(obj)
-                               }} globalUserName={this.state.globalUserName}/>}/>
+                               }} updateRecipes={this.props.updateRecipes} globalUserName={this.state.globalUserName}/>}/>
                         <Route
                             path='/logowanie'
                             render={(props) => <Login {...props} userName={this.state.globalUserName}

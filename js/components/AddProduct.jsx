@@ -97,15 +97,19 @@ class AddProduct extends React.Component {
             }
         })
             .then(response => response.json())
-            .then(()=>{
+            .then((res)=>{
                 // to do
                 // if(typeof this.props.setUserName === 'function'){
                 //     this.props.setUserName(this.state.newUserName);
                 // }
                 console.log('test');
 
-                if(typeof this.props.updateData === 'function'){
-                    this.props.updateData(obj);
+                if(typeof this.props.updateData === 'function') {
+                    this.props.updateData(res);
+
+                }
+                if(typeof this.props.updateRecipes=== 'function'){
+                    this.props.updateRecipes();
                 }
 
 
@@ -138,31 +142,34 @@ class AddProduct extends React.Component {
 
 
         return (
-            <form onSubmit={this.sendData}>
-                <h3>Dodaj swój przepis</h3>
-                <div>
+            <div className='container'>
+            <form id="form"onSubmit={this.sendData}>
+                <h3 className='h3'>Dodaj swój przepis</h3>
+                <div className='flex'>
                     <label htmlFor='title'>Nazwa Przepisu</label>
                     <input id='title' value={this.state.title} name='title' onChange={this.handleChange}/>
                 </div>
-                <div>
+                <div className='flex'>
                     <label htmlFor='description'>Opis</label>
                     <textarea id='description' value={this.state.description} name='description'
                               onChange={this.handleChange}></textarea>
                 </div>
-                <div>
+                <div className='vege'>
+
+                    <label className='vege-label' htmlFor='vegetarian'>Wegetarianski</label>
                     <input id='vegetarian' type='checkbox' name='isVegetarian' onChange={this.handleCheckboxChange}
                            value={this.state.vegetarian}/>
-                    <label htmlFor='vegetarian'>Wegetarianski</label>
                 </div>
-                <div>
-                    <input id='timeToPrepare' name='timeToPrepare' type='number' value={this.state.timeToPrepare} onChange={this.handleChange} />
+                <div className='flex'>
+
                     <label htmlFor='timeToPrepare'>Czas do przygotowania</label>
+                    <input id='timeToPrepare' name='timeToPrepare' type='number' value={this.state.timeToPrepare} onChange={this.handleChange} />
                 </div>
                 <div className="drop_down_list">
                     <span className="list_label">{this.state.hotLvlValue} <i
                         className="fas fa-arrow-down" onClick={this.handleClick}/></span>
 
-                    <ul style={styleListPanel} className="list_panel">
+                    <ul style={styleListPanel} className="list_panel flex">
                         <li key={0} data-id='0' onClick={this.handleHotLvlChoice}>Łagodny</li>
                         <li key={1} data-id='1' onClick={this.handleHotLvlChoice}>Lekko Ostry</li>
                         <li key={2} data-id='2' onClick={this.handleHotLvlChoice}>Ostry</li>
@@ -170,7 +177,7 @@ class AddProduct extends React.Component {
                     </ul>
                 </div>
                 <div className='MainLists'>
-                    <div>
+                    <div className='flex'>
                         <div>
                             <input value={this.state.ingredient} name='ingredient' onChange={this.handleChange}/>
                             <button onClick={this.handleAddingIngredient}>Dodaj składnik</button>
@@ -179,10 +186,10 @@ class AddProduct extends React.Component {
                             {listOfIngredients}
                         </ul>
                     </div>
-                    <div>
+                    <div className='flex'>
                         <div>
                             <input value={this.state.instruction} name='instruction' onChange={this.handleChange}/>
-                            <button onClick={this.handleAddingInstruction}>Dodaj instrukcje</button>
+                            <button  onClick={this.handleAddingInstruction}>Dodaj instrukcje</button>
                         </div>
                         <ul>
                             {listOfInstructions}
@@ -191,8 +198,9 @@ class AddProduct extends React.Component {
 
 
                 </div>
-                <button type='submit'>Dodaj Przepis</button>
+                <button className='addRecipe' type='submit'>Dodaj Przepis</button>
             </form>
+            </div>
         );
     }
 }

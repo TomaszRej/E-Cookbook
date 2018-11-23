@@ -1,46 +1,112 @@
-//.drop_down_list {
-//  border:1px solid #8de0d2;
-//  width: 280px;
-//  height:38px;
-//  background-color: white;
-//  margin-top:22px;
-//  padding: 8px 12px;
-//  position: relative;
-//}
-//
-//.list_label {
-//  font-size: 30px;
-//  color: $dark;
-//}
-.list_arrow {
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 15px solid #24baa0;
-  display:block;
-  position: absolute;
-  right: 14px;
-  top: 20px;
-  cursor: pointer;
-}
-//.list_panel {
-//  background-color: white;
-//  border: 1px solid #ccc;
-//  width: 288px;
-//  padding-left: 15px;
-//  padding-bottom: 10px;
-//  list-style: none;
-//  margin: 0;
-//  left: 0px;
-//  z-index: 2;
-//  position: absolute;
-//  top: 54px;
-//  display:none;
-//}
-//.list_panel li {
-//  margin-top:10px;
-//  cursor: pointer;
-//  color: #585858;
-//}
+#form{
+  //background-color: pink;
+  box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  margin: 40px auto;
+  .h3{
+    color:$primary;
+    font-size: 40px;
+    font-weight: normal;
+    margin:40px 0;
+  }
+  input{
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    color: $dark;
+    padding: 0 20px;
+  }
+  textarea{
+    width:300px;
+    height: 100px;
+  }
+  button {
+    color: #fff;
+    background-color: $primary;
+    width: 200px;
+    padding: 10px;
+    //border-radius: 10px;
+    outline: none;
+    border: 1px solid $primary;
+    text-transform: uppercase;
+    font-size: 20px;
+    &:hover {
+      background-color: #fff;
+      color: $primary;
+      a {
+        color: $primary;
+        font-size: 20px;
+      }
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .addRecipe{
+    color: $primary;
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+    margin: 60px 0;
+    //border-radius: 10px;
+    outline: none;
+    border: 1px solid $primary;
+    text-transform: uppercase;
+    font-size: 20px;
+    &:hover {
+      background-color: $primary;
+      color: #fff;
+      a {
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+    a {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+  .flex{
+    display:flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  .vege{
+    //display:flex;
+  }
+  .vege-label{
+    margin-left:20px;
+  }
 
+  .drop_down_list{
+    margin-bottom:45px;
+  }
+  ul{
+    // background-color: white;
+
+    width: 400px;
+    height: 100px;
+    font-size: 20px;
+    margin-top: 10px;
+    li{
+      background-color: #fff;
+      list-style: none;
+      border: 1px solid $primary;
+      border-radius: 3px;
+      color: $dark;
+      padding: 3px 5px;
+      margin: 5px 3px;
+      //display: inline;
+      display:block;
+      margin-bottom: 10px;
+
+      i{
+        color: red;
+      }
+    }
+  }
+}

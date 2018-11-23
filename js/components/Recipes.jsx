@@ -7,23 +7,50 @@ class Recipes extends React.Component {
 
         console.log(e.target.dataset.id);
         const index = e.target.dataset.id;
+        let newLikesForUpdate;
 
-        this.props.data.forEach((el)=>{
-            if(el.id == index){
+
+        let newLikes, whoLikes;
+        this.props.data.forEach((el) => {
+            if (el.id == index) {
+                console.log(!el.whoLikes.includes(this.props.globalUserName), 'czy zawiera globaluser');
+
                 console.log('zgodne indeksy!!!!');
+                newLikesForUpdate = el.likes;
+                console.log(this.props.globalUserName,el.whoLikes,'+++++++++++');
+                if (!el.whoLikes.includes(this.props.globalUserName)) {
+                    newLikesForUpdate = newLikesForUpdate + 1;
+                }else{
+                    newLikesForUpdate = newLikesForUpdate;
+                }
+                whoLikes = el.whoLikes.slice();
+                whoLikes.push(this.props.globalUserName);
+                if (!el.whoLikes.includes(this.props.globalUserName)) {
+                    newLikes = {
+                        likes: el.likes + 1,
+                        whoLikes: whoLikes,
+                    };
+                }else{
+                    newLikes = {
+                        likes: el.likes,
+                        whoLikes:whoLikes,
+                    }
+                }
 
 
+                // newLikes = Object.assign({},el);
             }
         })
 
-        const newLikes = this.props.data[index - 1].likes + 1;
+        //const newLikes = this.props.data[index - 1].likes + 1;
 
-        const data = this.props.data.slice();
+        //const data = this.props.data.slice();
         //console.log(data[index - 1].whoLikes, 'dataDATA');
 
         fetch(`http://localhost:3000/recipes/${index}`, {
             method: 'PATCH',
-            body: JSON.stringify({likes: newLikes}),
+            // body: JSON.stringify({likes: newLikes}),
+            body: JSON.stringify(newLikes),
             headers: {
                 "Content-Type": "application/json" // <--- don't forget this!
             }
@@ -34,8 +61,15 @@ class Recipes extends React.Component {
                 console.log('testODPOWIEDZ ', response);
 
                 if (typeof this.props.updateHearts === 'function') {
-                    this.props.updateHearts(index, newLikes);
+                    this.props.updateHearts(index, newLikesForUpdate);
+                    console.log(newLikesForUpdate);
                     console.log('wywolanie test sercacacac');
+                }
+
+                if (typeof this.props.updateWhoLikes === 'function') {
+                    this.props.updateWhoLikes(index, whoLikes);
+                    console.log(whoLikes);
+                    console.log('wywolanie WhoLiuKEs');
                 }
 
 
@@ -45,16 +79,44 @@ class Recipes extends React.Component {
 
     }
 
-    deleteItem = () => {
+    deleteItem = (e) => {
         console.log('test usuwania');
-        // Do zrobienia
+        console.log(e.target.dataset.id);
+        const index = e.target.dataset.id;
+
+        fetch(`http://localhost:3000/recipes/${index}`, {
+            method: 'DELETE',
+            //body: JSON.stringify({likes: newLikes}),
+            headers: {
+                "Content-Type": "application/json" // <--- don't forget this!
+            }
+        })
+            .then(response => response.json())
+            .then((response) => {
+
+                console.log('testDELETE');
+                if (typeof this.props.updateRecipes === 'function') {
+
+                    this.props.updateRecipes(index);
+                }
+                console.log('testDELETE ', response);
+
+
+            })
+            .catch(error => console.error('Error:', error));
 
 
     }
 
     render() {
 
-        const recipes = this.props.data;
+        const recipes = this.props.filterRecipes();
+
+        recipes.sort((a, b) => {
+            return b.sort - a.sort;
+        })
+
+        console.log(recipes, '@@@@@');
         const arr = [];
         let add = true;
         console.log(this.props.onlyVegetarianChecked, 'zrecipes');
@@ -69,8 +131,13 @@ class Recipes extends React.Component {
                 height: '400px'
             }
 
-            const element = <div key={el.id} style={{position: 'relative'}}className='recipe'>
-                <div onClick={this.deleteItem} style={{display:el.author == this.props.globalUserName?'block':'none',position: 'absolute',zIndex:'1'}}>Usuń</div>
+            const element = <div key={el.id} style={{position: 'relative'}} className='recipe'>
+                <div data-id={el.id} onClick={(e) => this.deleteItem(e)} style={{
+                    display: el.author == this.props.globalUserName ? 'block' : 'none',
+                    position: 'absolute',
+                    zIndex: '1'
+                }}>Usuń
+                </div>
                 <Link to={`/recipe/${el.id}`}>
                     <div className='img' style={style}/>
                 </Link>
@@ -78,9 +145,13 @@ class Recipes extends React.Component {
                 <footer>
                     <p>{el.title}</p>
                     <div className='icons'>
-                        <span className='leaf'><i style={{color: el.isVegetarian ? 'green' : 'gray'}} className="fas fa-leaf"/></span>
-                        <span className='hot'><i style={{color: el.hotLvl !== 'Łagodny'?'red':'gray'}} className="fab fa-hotjar"/><i style={{color: (el.hotLvl !== 'Łagodny')&&(el.hotLvl !== 'Lekko Ostry')?'red':'gray'}}  className="fab fa-hotjar"/><i style={{color: el.hotLvl === 'Mega Ostry'?'red':'gray'}}
-                            className="fab fa-hotjar"/>
+                        <span className='leaf'><i style={{color: el.isVegetarian ? 'green' : 'gray'}}
+                                                  className="fas fa-leaf"/></span>
+                        <span className='hot'><i style={{color: el.hotLvl !== 'Łagodny' ? 'red' : 'gray'}}
+                                                 className="fab fa-hotjar"/><i
+                            style={{color: (el.hotLvl !== 'Łagodny') && (el.hotLvl !== 'Lekko Ostry') ? 'red' : 'gray'}}
+                            className="fab fa-hotjar"/><i style={{color: el.hotLvl === 'Mega Ostry' ? 'red' : 'gray'}}
+                                                          className="fab fa-hotjar"/>
                     </span>
                         <span className='time'><i className="far fa-clock"/><span>{el.timeToPrepare}</span>
                         </span>

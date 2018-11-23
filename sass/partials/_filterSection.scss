@@ -1,7 +1,22 @@
-.onlyVegetarianArea{
-  text-align: center;
+.onlyVegetarianArea {
+  //text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    width: 300px;
+    height: 45px;
+    font-size: 24px;
+    color: $dark;
+    //padding: 0 20px;
+  }
+  span {
+    color: $dark;
+    margin-left: -100px;
+    margin-bottom: 0px;
+    font-size:30px;
+  }
 
 }
-input[type="checkbox"]{
-  margin-right: 10px;
-}
+
