@@ -30,9 +30,9 @@ class Nav extends React.Component {
                         <li className='nav-link'><NavLink className='nav-link-a' activeClassName='activeNavLink' exact
                                                           to='/'>Strona
                             główna </NavLink></li>
-                        {/*<li style={style} className='nav-link'><NavLink className='nav-link-a'*/}
-                                                                        {/*activeClassName='activeNavLink' exact*/}
-                                                                        {/*to='/ulubione'>Ulubione</NavLink></li>*/}
+                        <li style={style} className='nav-link'><NavLink className='nav-link-a'
+                                                                        activeClassName='activeNavLink' exact
+                                                                        to='/ulubione'>Ulubione</NavLink></li>
                     </ul>
                 </nav>
                 <div>

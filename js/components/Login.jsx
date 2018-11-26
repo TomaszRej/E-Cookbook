@@ -122,7 +122,7 @@ class Login extends React.Component {
             this.props.setUserName(this.state.userName);
         }
 
-    }
+    };
 
     handleNewUserName = (e) => {
         const name = e.target.value;
@@ -131,7 +131,7 @@ class Login extends React.Component {
         },()=>{
             console.log(this.state.newUserName);
         })
-    }
+    };
 
     validateRegister = (e) => {
         e.preventDefault();
@@ -140,7 +140,7 @@ class Login extends React.Component {
             errors.push('Podaj nową nazwę użytkownika!!');
             this.setState({
                 errors: errors
-            })
+            });
             return;
         }
 
@@ -155,17 +155,6 @@ class Login extends React.Component {
 
                     errors.push(`Użytkownik ${user[0].name} już istnieje!!!`);
 
-                // if(errors.length !== 0) {
-                //     this.setState({
-                //         errors: errors
-                //     })
-                // }else {
-                //     this.setState({
-                //         redirect: '/',
-                //         errors: errors
-                //     })
-                // }
-
                 this.setState({
                     errors: errors
                 })
@@ -177,7 +166,8 @@ class Login extends React.Component {
                     //name: this.state.newUserName,
                     //password: this.state.newPassword,
                     name: this.state.newUserName,
-                    password: this.state.newPassword
+                    password: this.state.newPassword,
+                    favorites: [],
                 }
                     if(this.state.newPassword === this.state.repeatPassword){
                         fetch('http://localhost:3000/users', {
@@ -205,11 +195,7 @@ class Login extends React.Component {
                     errors: errors
                 })
             });
-
-
-
-
-    }
+    };
 
 
 

@@ -9,7 +9,6 @@ class Recipes extends React.Component {
         const index = e.target.dataset.id;
         let newLikesForUpdate;
 
-
         let newLikes, whoLikes;
         this.props.data.forEach((el) => {
             if (el.id == index) {
@@ -21,18 +20,24 @@ class Recipes extends React.Component {
                 if (!el.whoLikes.includes(this.props.globalUserName)) {
                     newLikesForUpdate = newLikesForUpdate + 1;
                 }else{
-                    newLikesForUpdate = newLikesForUpdate;
+                    newLikesForUpdate = newLikesForUpdate - 1;
                 }
                 whoLikes = el.whoLikes.slice();
-                whoLikes.push(this.props.globalUserName);
+                console.log(this.props.globalUserName);
                 if (!el.whoLikes.includes(this.props.globalUserName)) {
+                    whoLikes.push(this.props.globalUserName);
                     newLikes = {
                         likes: el.likes + 1,
                         whoLikes: whoLikes,
                     };
                 }else{
+                   // usunac z tablicy  whoLikes
+                    const index = whoLikes.indexOf(this.props.globalUserName);
+                    console.log(index,'indexxxxxxxxx');
+
+                    whoLikes.splice(index, 1);
                     newLikes = {
-                        likes: el.likes,
+                        likes: el.likes -1,
                         whoLikes:whoLikes,
                     }
                 }
@@ -40,7 +45,7 @@ class Recipes extends React.Component {
 
                 // newLikes = Object.assign({},el);
             }
-        })
+        });
 
         //const newLikes = this.props.data[index - 1].likes + 1;
 
@@ -109,31 +114,27 @@ class Recipes extends React.Component {
     }
 
     render() {
-
         const recipes = this.props.filterRecipes();
 
         recipes.sort((a, b) => {
             return b.sort - a.sort;
-        })
+        });
 
-        console.log(recipes, '@@@@@');
         const arr = [];
         let add = true;
         console.log(this.props.onlyVegetarianChecked, 'zrecipes');
         for (const el of recipes) {
             const style = {
-                // backgroundImage: `url("../images/${el.link}")`,
                 backgroundImage: `url(${el.link})`,
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 width: '500px',
                 height: '400px'
-            }
-
+            };
             const element = <div key={el.id} style={{position: 'relative'}} className='recipe'>
                 <div data-id={el.id} onClick={(e) => this.deleteItem(e)} style={{
-                    display: el.author == this.props.globalUserName ? 'block' : 'none',
+                    display: el.author === this.props.globalUserName ? 'block' : 'none',
                     position: 'absolute',
                     zIndex: '1'
                 }}>Usuń

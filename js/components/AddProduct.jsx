@@ -152,7 +152,7 @@ class AddProduct extends React.Component {
                 <div className='flex'>
                     <label htmlFor='description'>Opis</label>
                     <textarea id='description' value={this.state.description} name='description'
-                              onChange={this.handleChange}></textarea>
+                              onChange={this.handleChange}/>
                 </div>
                 <div className='vege'>
 

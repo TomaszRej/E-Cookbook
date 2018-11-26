@@ -4,9 +4,21 @@ class Recipe extends  React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: ''
+            data: '',
+            isFavorite: false
         }
     }
+    addToFavorites = () =>{
+      const id = this.props.match.params.id;
+      if(typeof this.props.addToFavoritesList ==='function'){
+          this.props.addToFavoritesList(id);
+          this.setState({
+              isFavorite: true
+          })
+      }
+
+
+    };
 
     componentDidMount(){
         const index = this.props.match.params.id;
@@ -43,7 +55,7 @@ class Recipe extends  React.Component {
                 for(const i of el.instructions){
                     instructions.push(<li>{i}</li>);
                 }
-            element = <div><h3>{el.title}</h3>
+            element = <div key={el.id}><h3>{el.title}</h3>
                 <p>{el.description}</p>
                 <div><p>Autor</p><p>{el.author}</p></div>
                 <div><h4>Składniki:</h4>
@@ -51,14 +63,11 @@ class Recipe extends  React.Component {
                 </div>
                 <div><h4>Instrukcje</h4><ul>{instructions}</ul></div></div>;
         }
-        //console.log(this.state.data.isVegetarian);
-
-
 
         return (
             <div>
                 {element}
-
+                <button onClick={this.addToFavorites}>{this.state.isFavorite ? 'Usuń z ulubionych' : 'Dodaj do ulubionych'}</button>
             </div>
         );
     }

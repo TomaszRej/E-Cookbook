@@ -19,14 +19,51 @@ import style from '../sass/style.scss';
 class App extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            // isUserLogged: false,
             globalUserName: '',
             data: [],
-            ingredients: []
+            ingredients: [],
+            favorites: [],
+            userID: ''
         }
     }
+
+    addToFavoritesList = (id) => {
+        console.log('z update favorite list');
+        const favorites = this.state.favorites;
+        this.state.data.forEach((el)=>{
+            console.log(el.id,id,'porownanie');
+            console.log(favorites);
+            if(el.id == id){
+                favorites.push(el);
+                const fav = {
+                    favorites: favorites
+                };
+                console.log(this.state.globalUserName);
+                // fetch(`http://localhost:3000/users/${this.state.globalUserName}`, {
+                // zmienic zeby nie  na sztywno
+                fetch(`http://localhost:3000/users/${this.state.userID}`, {
+
+                    method: 'PATCH',
+                    body: JSON.stringify(fav),
+                    headers: {
+                        "Content-Type": "application/json" // <--- don't forget this!
+                    }
+                })
+                    .then(response => response.json())
+                    .then((res)=>{
+                        console.log(res,"ODPOWIEDZ");
+                    })
+                    .catch(error => console.error('Error:', error));
+
+            }
+        });
+        this.setState({
+            favorites: favorites
+        },()=>{
+            console.log(this.state.favorites);
+        })
+    };
 
     updateData = (obj) => {
         const data = this.state.data.slice();
@@ -34,20 +71,19 @@ class App extends React.Component {
         this.setState({
             data: data
         })
-    }
+    };
     updateRecipes = (id) => {
         const data = this.state.data.slice();
 
-        // data.filter((el)=>{
-        //     console.log(id,el.id);
-        //     return Number(el.id) != id;
-        // })
         const arr = [];
+
         data.forEach((el) => {
+            console.log(typeof el.id);
+            console.log(typeof id);
             if(el.id != id){
                 arr.push(el);
             }
-        })
+        });
 
         console.log(data,'xxxxxxxxxxxxxxxxxx');
 
@@ -55,7 +91,7 @@ class App extends React.Component {
         this.setState({
             data: arr
         })
-    }
+    };
 
     updateHearts = (id, likes) => {
         const data = this.state.data.slice();
@@ -63,13 +99,13 @@ class App extends React.Component {
                     if (id == el.id) {
                         el.likes = likes
                     }
-        })
+        });
 
         this.setState({
             data: data
         })
 
-    }
+    };
     updateWhoLikes = (id,whoLikes) => {
         console.log("''''''''''''''''''");
         console.log(id);
@@ -81,13 +117,13 @@ class App extends React.Component {
             if (id == el.id) {
                 el.whoLikes = whoLikes;
             }
-        })
+        });
 
         this.setState({
             data: data
-        })
+        });
         console.log(';;;;;;;;;;;;;;;;;;;;;;;;;;');
-    }
+    };
 
     setUserName = (name) => {
         localStorage.removeItem('savedName');
@@ -96,35 +132,18 @@ class App extends React.Component {
         }, () => {
 
         })
-    }
+    };
 
-    // filterRecipes = (ingredient) => {
-    //     const data = this.state.data.slice();
-    //     const arr = [];
-    //     console.log(ingredient,'data w metodzie filter');
-    //     console.log(data,'wmet filter');
-    //     data.forEach((el) =>{
-    //         for(const i of el.ingredients){
-    //             if(i === ingredient){
-    //                 arr.push(el);
-    //             }
-    //         }
-    //     });
-    //     this.setState({
-    //         data: arr
-    //     })
-    // }
 
     setIngredientsState = (ingredients) => {
-console.log(this.state.ingredients,'skladniki w set ingredients');
         const ints = ingredients.slice();
         this.setState({
             ingredients: ints
         })
-    }
+    };
 
     filterRecipes = () => {
-        const data = this.state.data.map((recipe)=>{
+       const data= this.state.data.map((recipe)=>{
             recipe.sort = 0;
             console.log(this.state.ingredients,'skladniki');
             this.state.ingredients.forEach((i)=>{
@@ -132,21 +151,14 @@ console.log(this.state.ingredients,'skladniki w set ingredients');
                 if(recipe.ingredients.indexOf(i) >= 0){
                     recipe.sort++;
                 }
-            })
-
+            });
             return recipe;
         });
-
         return data;
-
-    }
-
-
+    };
 
     componentDidMount() {
-
         const userName = localStorage.getItem("savedName");
-
 
         fetch('http://localhost:3000/recipes')
             .then(resp => {
@@ -160,33 +172,47 @@ console.log(this.state.ingredients,'skladniki w set ingredients');
                     data: data,
                     globalUserName: userName
                 }, () => {
-                    //console.log(this.state.data, 'dane state callback z jsonserver');
+                    console.log(this.state.data, 'dane state callback z jsonserver');
                 });
+            })
+            .catch(err => console.log(err));
+
+        fetch('http://localhost:3000/users')
+            .then(resp => {
+                if (resp.ok) {
+                    return resp.json();
+                }
+                throw new Error('Error message?!');
+            })
+            .then(users => {
+                    console.log(users,'users z didmount');
+                    users.forEach((el) => {
+                        if(el.name === this.state.globalUserName){
+                            // console.log(el.name, this.state.globalUserName,'user aktualny');
+                            console.log(el.favorites);
+                            this.setState({
+                                favorites: el.favorites,
+                                userID: el.id
+                            })
+                        }
+                    })
             })
             .catch(err => console.log(err));
     }
 
-
     render() {
-
-
         return (
             <HashRouter>
                 <div>
                     <Nav globalUserName={this.state.globalUserName} setUserName={(name) => this.setUserName(name)}/>
-
                     <Switch>
-                        {/*<Route exact path='/' component={Home}/>*/}
                         <Route exact path='/'
                                render={(props) => <Home {...props} filterRecipes={this.filterRecipes} data={this.state.data} setIngredientsState={this.setIngredientsState} updateWhoLikes={this.updateWhoLikes} globalUserName={this.state.globalUserName} updateData={(obj) => {
                                    this.updateData(obj)
                                }} updateHearts={this.updateHearts} updateRecipes={this.updateRecipes}/>}/>
-
-
-
-                        <Route exact path='/recipe/:id' component={Recipe}/>
-                        {/*<Route path='/dodawanieProduktu' component={AddProduct globalUser}/>*/}
-
+                        <Route exact path='/ulubione' render={(props) => <Favorites {...props} favorites={this.state.favorites}/>}/>
+                        {/*<Route exact path='/recipe/:id' component={Recipe}/>*/}
+                        <Route exact path='/recipe/:id'  render={(props) => <Recipe {...props} addToFavoritesList={this.addToFavoritesList} favorites={this.state.favorites}/>}/>
                         <Route exact path='/dodawanieProduktu'
                                render={(props) => <AddProduct {...props} updateData={(obj) => {
                                    this.updateData(obj)
