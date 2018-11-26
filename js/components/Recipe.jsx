@@ -5,7 +5,7 @@ class Recipe extends  React.Component {
         super(props);
         this.state = {
             data: '',
-            isFavorite: false
+            isFavorite: ''
         }
     }
     addToFavorites = () =>{
@@ -19,6 +19,16 @@ class Recipe extends  React.Component {
 
 
     };
+    removeFromFavorites = () => {
+        const id = this.props.match.params.id;
+        if(typeof this.props.removeFromFavoritesList ==='function'){
+            this.props.removeFromFavoritesList(id);
+            this.setState({
+                isFavorite: false
+            })
+        }
+    };
+
 
     componentDidMount(){
         const index = this.props.match.params.id;
@@ -33,6 +43,22 @@ class Recipe extends  React.Component {
                 //console.log(data,'z fecha');
                 //const dataFromState = this.state.data.slice();
                 ///dataFromState.push(data);
+
+                for(const el of this.props.favorites){
+                    // porownac params.id z tym w
+
+                    if(this.props.match.params.id == el.id){
+                        console.log('COD CÓD');
+
+                        this.setState({
+                            isFavorite: true
+                        })
+                    } else {
+                        this.setState({
+                            isFavorite: false
+                        })
+                    }
+                }
                     this.setState({
                         data: data,
                     },()=>{
@@ -64,10 +90,23 @@ class Recipe extends  React.Component {
                 <div><h4>Instrukcje</h4><ul>{instructions}</ul></div></div>;
         }
 
+        console.log(this.props.favorites,'favorites z recipe');
+        let displayRightBtn = 'false';
+        for(const el of this.props.favorites){
+            // porownac params.id z tym w
+
+            if(this.props.match.params.id == el.id){
+                console.log('COD CÓD');
+
+                displayRightBtn = true;
+            }
+        }
+
         return (
             <div>
                 {element}
-                <button onClick={this.addToFavorites}>{this.state.isFavorite ? 'Usuń z ulubionych' : 'Dodaj do ulubionych'}</button>
+                <button style={{display:this.state.isFavorite?'none':'block'}} onClick={this.addToFavorites}> Dodaj do ulubionych</button>
+                <button style={{display:this.state.isFavorite?'block':'none'}} onClick={this.removeFromFavorites}>Usuń z ulubionych</button>
             </div>
         );
     }

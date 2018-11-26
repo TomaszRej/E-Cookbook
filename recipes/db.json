@@ -2,45 +2,6 @@
   "recipes": [
     {
       "author": "Tomek",
-      "title": "Pierogi",
-      "description": "Fajny przpis na pierogi",
-      "timeToPrepare": "20",
-      "hotLvl": "Stopień ostrości",
-      "isVegetarian": true,
-      "link": "https://via.placeholder.com/150",
-      "likes": 48,
-      "whoLikes": [
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek"
-      ],
-      "ingredients": [
-        "d"
-      ],
-      "instructions": [
-        "dsd"
-      ],
-      "id": 2
-    },
-    {
-      "author": "Tomek",
       "title": "Omletz boczkiem",
       "description": "",
       "timeToPrepare": "7",
@@ -296,11 +257,97 @@
       "hotLvl": "Stopień ostrości",
       "isVegetarian": "",
       "link": "https://via.placeholder.com/150",
+      "likes": 1,
+      "whoLikes": [
+        "Tomek"
+      ],
+      "ingredients": [],
+      "instructions": [],
+      "id": 29
+    },
+    {
+      "author": "Tomek",
+      "title": "usun",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
       "likes": 0,
       "whoLikes": [],
       "ingredients": [],
       "instructions": [],
-      "id": 29
+      "id": 30
+    },
+    {
+      "author": "x",
+      "title": "wewewewewe",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
+      "likes": 0,
+      "whoLikes": [],
+      "ingredients": [],
+      "instructions": [],
+      "id": 31
+    },
+    {
+      "author": "x",
+      "title": "z",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
+      "likes": 0,
+      "whoLikes": [],
+      "ingredients": [],
+      "instructions": [],
+      "id": 32
+    },
+    {
+      "author": "x",
+      "title": "zf",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
+      "likes": 0,
+      "whoLikes": [],
+      "ingredients": [],
+      "instructions": [],
+      "id": 33
+    },
+    {
+      "author": "x",
+      "title": "zf2",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
+      "likes": 0,
+      "whoLikes": [],
+      "ingredients": [],
+      "instructions": [],
+      "id": 34
+    },
+    {
+      "author": "x",
+      "title": "zzzzzzzz",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
+      "likes": 0,
+      "whoLikes": [],
+      "ingredients": [],
+      "instructions": [],
+      "id": 35
     }
   ],
   "users": [
@@ -310,45 +357,27 @@
       "password": "Tomek",
       "favorites": [
         {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
+          "author": "x",
+          "title": "zzzzzzzz",
+          "description": "",
+          "timeToPrepare": 0,
           "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
+          "isVegetarian": "",
           "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
+          "likes": 0,
+          "whoLikes": [],
+          "ingredients": [],
+          "instructions": [],
+          "id": 35,
           "sort": 0
-        },
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Puchatek",
+      "password": "Puchatek",
+      "favorites": [
         {
           "author": "Tomek",
           "title": "nowy vege",
@@ -367,429 +396,8 @@
           "instructions": [],
           "id": 18,
           "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "xxxxxx",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 3,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [],
-          "instructions": [],
-          "id": 20,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "fav",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 0,
-          "whoLikes": [],
-          "ingredients": [],
-          "instructions": [],
-          "id": 29,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
         }
       ]
-    },
-    {
-      "id": 2,
-      "name": "Puchatek",
-      "password": "Puchatek",
-      "favorites": []
-    },
-    {
-      "name": "Magda",
-      "password": "123",
-      "favorites": [
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
-        }
-      ],
-      "id": 3
-    },
-    {
-      "name": "x",
-      "password": "x",
-      "favorites": [
-        {
-          "author": "Tomek",
-          "title": "Pierogi",
-          "description": "Fajny przpis na pierogi",
-          "timeToPrepare": "20",
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": true,
-          "link": "https://via.placeholder.com/150",
-          "likes": 48,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "d"
-          ],
-          "instructions": [
-            "dsd"
-          ],
-          "id": 2,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Nowy",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 15,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Puchatek",
-            "Puchatek",
-            "Puchatek"
-          ],
-          "ingredients": [],
-          "instructions": [],
-          "id": 19,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "tomek",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 0,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [],
-          "instructions": [],
-          "id": 23,
-          "sort": 0
-        }
-      ],
-      "id": 4
     }
   ]
 }

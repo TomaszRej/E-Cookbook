@@ -8,8 +8,10 @@ class Nav extends React.Component {
         console.log('test klik');
         if (this.props.globalUserName) {
             if (typeof this.props.setUserName === 'function') {
-
                 this.props.setUserName('');
+            }
+            if (typeof this.props.resetFavoriteList === 'function') {
+                this.props.resetFavoriteList();
             }
         }
     }

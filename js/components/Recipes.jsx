@@ -16,10 +16,11 @@ class Recipes extends React.Component {
 
                 console.log('zgodne indeksy!!!!');
                 newLikesForUpdate = el.likes;
-                console.log(this.props.globalUserName,el.whoLikes,'+++++++++++');
+                console.log(this.props.globalUserName, el.whoLikes, '+++++++++++');
+                if(this.props.globalUserName){
                 if (!el.whoLikes.includes(this.props.globalUserName)) {
                     newLikesForUpdate = newLikesForUpdate + 1;
-                }else{
+                } else {
                     newLikesForUpdate = newLikesForUpdate - 1;
                 }
                 whoLikes = el.whoLikes.slice();
@@ -30,17 +31,18 @@ class Recipes extends React.Component {
                         likes: el.likes + 1,
                         whoLikes: whoLikes,
                     };
-                }else{
-                   // usunac z tablicy  whoLikes
+                } else {
+                    // usunac z tablicy  whoLikes
                     const index = whoLikes.indexOf(this.props.globalUserName);
-                    console.log(index,'indexxxxxxxxx');
+                    console.log(index, 'indexxxxxxxxx');
 
                     whoLikes.splice(index, 1);
                     newLikes = {
-                        likes: el.likes -1,
-                        whoLikes:whoLikes,
+                        likes: el.likes - 1,
+                        whoLikes: whoLikes,
                     }
                 }
+            }
 
 
                 // newLikes = Object.assign({},el);

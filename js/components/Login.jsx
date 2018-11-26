@@ -54,7 +54,7 @@ class Login extends React.Component {
         },()=> {
             console.log(this.state.repeatPassword);
         })
-    }
+    };
 
     validateLogin = (e) => {
         e.preventDefault();
@@ -79,6 +79,12 @@ class Login extends React.Component {
                         console.log(this.state.userName);
                         const userName = this.state.userName;
                         localStorage.setItem('savedName', userName);
+                        if(typeof this.props.setUserName === 'function'){
+                            this.props.setUserName(this.state.userName);
+                        }
+                        if (typeof this.props.updateFavoriteList === 'function') {
+                            this.props.updateFavoriteList();
+                        }
 
                     }else {
                         //console.log('podales niepoprawne chaslo');
@@ -118,9 +124,7 @@ class Login extends React.Component {
             });
 
 
-        if(typeof this.props.setUserName === 'function'){
-            this.props.setUserName(this.state.userName);
-        }
+
 
     };
 
@@ -182,6 +186,9 @@ class Login extends React.Component {
                                 // to do
                                 if(typeof this.props.setUserName === 'function'){
                                     this.props.setUserName(this.state.newUserName);
+                                }
+                                if (typeof this.props.updateFavoriteList === 'function') {
+                                    this.props.updateFavoriteList();
                                 }
                                 this.setState({
                                     redirect: '/'
