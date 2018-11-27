@@ -5,21 +5,14 @@ class FilterSection extends React.Component{
         if(typeof this.props.handleCheckboxChange === 'function'){
             this.props.handleCheckboxChange(e.target.checked);
         }
-    }
+    };
 
     render() {
         return (
             <div className='onlyVegetarianArea'>
-                {/*<input onChange={this.handleChange} id="onlyVegetarian" type="checkbox"*/}
-                       {/*checked={this.props.onlyVegetarianChecked}/>*/}
-
-
-                    <input type="checkbox" checked={this.props.onlyVegetarianChecked} onChange={this.handleChange}/>
-<span>tylko wegetarianskie</span>
-
-
-            </div>
-        );
+                <input type="checkbox" checked={this.props.onlyVegetarianChecked} onChange={this.handleChange}/>
+                <span>tylko wegetarianskie</span>
+            </div>);
     }
 }
 

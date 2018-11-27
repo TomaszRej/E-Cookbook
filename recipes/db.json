@@ -43,71 +43,6 @@
     },
     {
       "author": "Tomek",
-      "title": "Nowy",
-      "description": "",
-      "timeToPrepare": 0,
-      "hotLvl": "Stopień ostrości",
-      "isVegetarian": "",
-      "link": "https://via.placeholder.com/150",
-      "likes": 15,
-      "whoLikes": [
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Puchatek",
-        "Puchatek",
-        "Puchatek"
-      ],
-      "ingredients": [],
-      "instructions": [],
-      "id": 19
-    },
-    {
-      "author": "Tomek",
-      "title": "xxxxxx",
-      "description": "",
-      "timeToPrepare": 0,
-      "hotLvl": "Stopień ostrości",
-      "isVegetarian": "",
-      "link": "https://via.placeholder.com/150",
-      "likes": 3,
-      "whoLikes": [
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek"
-      ],
-      "ingredients": [],
-      "instructions": [],
-      "id": 20
-    },
-    {
-      "author": "Tomek",
-      "title": "ceceec",
-      "description": "",
-      "timeToPrepare": 0,
-      "hotLvl": "Stopień ostrości",
-      "isVegetarian": "",
-      "link": "https://via.placeholder.com/150",
-      "likes": 2,
-      "whoLikes": [
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Tomek",
-        "Puchatek",
-        "Puchatek",
-        "Puchatek",
-        "Puchatek"
-      ],
-      "ingredients": [],
-      "instructions": [],
-      "id": 21
-    },
-    {
-      "author": "Tomek",
       "title": "te",
       "description": "",
       "timeToPrepare": 0,
@@ -301,8 +236,10 @@
       "hotLvl": "Stopień ostrości",
       "isVegetarian": "",
       "link": "https://via.placeholder.com/150",
-      "likes": 0,
-      "whoLikes": [],
+      "likes": 1,
+      "whoLikes": [
+        "Tomek"
+      ],
       "ingredients": [],
       "instructions": [],
       "id": 32
@@ -348,6 +285,22 @@
       "ingredients": [],
       "instructions": [],
       "id": 35
+    },
+    {
+      "author": "Tomek",
+      "title": "zz",
+      "description": "",
+      "timeToPrepare": 0,
+      "hotLvl": "Stopień ostrości",
+      "isVegetarian": "",
+      "link": "https://via.placeholder.com/150",
+      "likes": 0,
+      "whoLikes": [],
+      "ingredients": [
+        "zz"
+      ],
+      "instructions": [],
+      "id": 36
     }
   ],
   "users": [
@@ -370,6 +323,30 @@
           "instructions": [],
           "id": 35,
           "sort": 0
+        },
+        {
+          "author": "Tomek",
+          "title": "Omletz boczkiem",
+          "description": "",
+          "timeToPrepare": "7",
+          "hotLvl": "Lekko Ostry",
+          "isVegetarian": "",
+          "link": "https://via.placeholder.com/150",
+          "likes": 12,
+          "whoLikes": [
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek"
+          ],
+          "ingredients": [
+            "jajka",
+            "boczek"
+          ],
+          "instructions": [],
+          "id": 16,
+          "sort": 0
         }
       ]
     },
@@ -379,22 +356,75 @@
       "password": "Puchatek",
       "favorites": [
         {
-          "author": "Tomek",
-          "title": "nowy vege",
+          "author": "x",
+          "title": "zzzzzzzz",
           "description": "",
           "timeToPrepare": 0,
           "hotLvl": "Stopień ostrości",
           "isVegetarian": "",
           "link": "https://via.placeholder.com/150",
-          "likes": 10,
+          "likes": 0,
+          "whoLikes": [],
+          "ingredients": [],
+          "instructions": [],
+          "id": 35,
+          "sort": 0
+        },
+        {
+          "author": "Tomek",
+          "title": "ceceec",
+          "description": "",
+          "timeToPrepare": 0,
+          "hotLvl": "Stopień ostrości",
+          "isVegetarian": "",
+          "link": "https://via.placeholder.com/150",
+          "likes": 2,
           "whoLikes": [
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Puchatek",
+            "Puchatek",
+            "Puchatek",
+            "Puchatek"
+          ],
+          "ingredients": [],
+          "instructions": [],
+          "id": 21,
+          "sort": 0
+        },
+        {
+          "author": "Tomek",
+          "title": "tomek",
+          "description": "",
+          "timeToPrepare": 0,
+          "hotLvl": "Stopień ostrości",
+          "isVegetarian": "",
+          "link": "https://via.placeholder.com/150",
+          "likes": -14,
+          "whoLikes": [
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
+            "Tomek",
             "Tomek",
             "Tomek",
             "Tomek"
           ],
           "ingredients": [],
           "instructions": [],
-          "id": 18,
+          "id": 25,
           "sort": 0
         }
       ]
