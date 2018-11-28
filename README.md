@@ -16,9 +16,9 @@
 * on recipe added by user is remove button so user can delete this recipe at any time
 
 ### Technologies used for this project:
-*[Sass](https://sass-lang.com/)
-*[React](https://reactjs.org/)
-*[json-server](https://github.com/typicode/json-server)
+* [Sass](https://sass-lang.com/)
+* [React](https://reactjs.org/)
+* [json-server](https://github.com/typicode/json-server)
 
 ### Configuration
 
