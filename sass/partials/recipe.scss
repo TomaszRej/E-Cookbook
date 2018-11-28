@@ -1,0 +1,53 @@
+.recipeDetails{
+  width: 700px;
+  margin: 35px auto 35px;
+  box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h3{
+    color: $primary;
+    font-size: 40px;
+    i{
+      margin: 0 10px;
+    }
+  }
+  .description, .author{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    color:$dark;
+    .description-label, .author-label{
+      color:$primary;
+    }
+  }
+
+
+
+  button {
+    color: $primary;
+    background-color: #fff;
+    width: 400px;
+    padding: 10px;
+    margin: 20px 0;
+    outline: none;
+    border: 1px solid $primary;
+    text-transform: uppercase;
+    font-size: 24px;
+    &:hover{
+      background-color: $primary;
+      color: #fff;
+      a{
+        color: #fff;
+        font-size: 24px;
+      }
+    }
+    a{
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+
+}

@@ -57,6 +57,7 @@ class Recipe extends React.Component {
     }
 
     render() {
+        const description = "Opis:  ";
         let element = '';
         for (const el of this.state.data) {
             const ingredients = [];
@@ -69,10 +70,16 @@ class Recipe extends React.Component {
             }
             element = (
                 <div key={el.id}>
-                    <h3>{el.title}</h3>
-                    <p>{el.description}</p>
-                    <div>
-                        <p>Autor</p>
+                    <h3>
+                        {el.title}
+                        <i style={{color: el.isVegetarian ? 'green': 'gray'}} className="fas fa-leaf"/>
+                    </h3>
+                    <div className="description">
+                        <p className='description-label'>{description}</p>
+                        <p>{el.description}</p>
+                    </div>
+                    <div className='author'>
+                        <p className='author-label'>Autor:</p>
                         <p>{el.author}</p>
                     </div>
                     <div>
@@ -87,7 +94,7 @@ class Recipe extends React.Component {
         }
 
         return (
-            <div>
+            <div className='recipeDetails'>
                 {element}
                 <button style={{display: this.state.isFavorite ? 'none' : 'block'}} onClick={this.addToFavorites}> Dodaj
                     do ulubionych

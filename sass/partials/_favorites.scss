@@ -1,0 +1,31 @@
+.favorites{
+  width: 700px;
+  margin: 35px auto 35px;
+  box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h2{
+    color: $primary;
+    font-size:30px;
+    font-weight: normal;
+  }
+
+  ul{
+    a{
+      text-decoration: none;
+      text-underline: none;
+      color: $dark;
+      font-size: 24px;
+      &:hover{
+        color: $primary;
+      }
+    }
+    li{
+      list-style: none;
+      margin: 5px 0;
+    }
+  }
+}
