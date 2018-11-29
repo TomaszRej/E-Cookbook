@@ -72,7 +72,18 @@ class Recipe extends React.Component {
                 <div key={el.id}>
                     <h3>
                         {el.title}
-                        <i style={{color: el.isVegetarian ? 'green': 'gray'}} className="fas fa-leaf"/>
+                        <span>
+                            <i style={{color: el.isVegetarian ? 'green': 'gray'}} className="fas fa-leaf"/>
+                        </span>
+                        <span className='hot'>
+                            <i style={{color: el.hotLvl !== 'Łagodny' ? 'red' : 'gray'}}
+                                   className="fab fa-hotjar"/>
+                            <i
+                                    style={{color: (el.hotLvl !== 'Łagodny') && (el.hotLvl !== 'Lekko Ostry') ? 'red' : 'gray'}}
+                                    className="fab fa-hotjar"/>
+                            <i style={{color: el.hotLvl === 'Mega Ostry' ? 'red' : 'gray'}}
+                                   className="fab fa-hotjar"/>
+                        </span>
                     </h3>
                     <div className="description">
                         <p className='description-label'>{description}</p>
@@ -82,13 +93,15 @@ class Recipe extends React.Component {
                         <p className='author-label'>Autor:</p>
                         <p>{el.author}</p>
                     </div>
-                    <div>
-                        <h4>Składniki:</h4>
-                        <ul>{ingredients}</ul>
-                    </div>
-                    <div>
-                        <h4>Instrukcje</h4>
-                        <ul>{instructions}</ul>
+                    <div className='lists'>
+                        <div>
+                            <h4>Składniki:</h4>
+                            <ul>{ingredients}</ul>
+                        </div>
+                        <div>
+                            <h4>Instrukcje:</h4>
+                            <ul>{instructions}</ul>
+                        </div>
                     </div>
                 </div>)
         }

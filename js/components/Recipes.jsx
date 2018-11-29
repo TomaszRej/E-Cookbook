@@ -91,7 +91,7 @@ class Recipes extends React.Component {
             };
             const element = (
                 <div key={el.id} style={{position: 'relative'}} className='recipe'>
-                    <div data-id={el.id} onClick={this.deleteItem} style={{
+                    <div className='deleteBtn' data-id={el.id} onClick={this.deleteItem} style={{
                         display: el.author === this.props.globalUserName ? 'block' : 'none',
                         position: 'absolute',
                         zIndex: '1'

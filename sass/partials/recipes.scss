@@ -13,6 +13,22 @@
       opacity: 0.6;
     }
   }
+  .deleteBtn{
+    background-color: #fff;
+    list-style: none;
+    border: 1px solid $primary;
+    border-radius: 3px;
+    color: $primary;
+    padding: 10px 30px;
+    margin: 5px 3px;
+    display: inline;
+    &:hover{
+      color:#fff;
+      background-color: $primary;
+      border: 1px solid #fff;
+
+    }
+  }
   footer{
     padding: 10px;
     text-align: center;

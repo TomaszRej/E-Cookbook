@@ -1,26 +1,38 @@
-#form{
+#form {
   //background-color: pink;
-  box-shadow: 0 0 1.5rem rgba(0,0,0,.2);
-  display:flex;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, .2);
+  display: flex;
   flex-direction: column;
   align-items: center;
+  //justify-content: center;
   width: 700px;
   margin: 40px auto;
-  .h3{
-    color:$primary;
+  .h3 {
+    color: $primary;
     font-size: 40px;
     font-weight: normal;
-    margin:40px 0;
+    margin: 40px 0;
   }
-  input{
-    width: 300px;
-    height: 45px;
+  input {
+    // width: 300px;
+    //height: 45px;
     font-size: 24px;
     color: $dark;
     padding: 0 20px;
+    //margin-right: 10px;
   }
-  textarea{
-    width:300px;
+  input[type='number'] {
+    margin-bottom: 20px;
+    padding:5px;
+  }
+  input[type='checkbox'] {
+    margin: 20px 10px;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  textarea {
+    width: 300px;
     height: 100px;
   }
   button {
@@ -46,7 +58,13 @@
       text-decoration: none;
     }
   }
-  .addRecipe{
+  .inputIngredients {
+    display: flex;
+  }
+  .inputInstructions {
+    display: flex;
+  }
+  .addRecipe {
     color: $primary;
     background-color: #fff;
     width: 400px;
@@ -70,29 +88,79 @@
       text-decoration: none;
     }
   }
-  .flex{
-    display:flex;
+  .flex {
+    display: flex;
     flex-direction: column;
     margin: 20px 0;
   }
-  .vege{
-    //display:flex;
+  .vege {
+
   }
-  .vege-label{
-    margin-left:20px;
+  .vege-label {
+    //margin-left:20px;
+  }
+  .drop_down_list {
+    margin: 30px 0;
+  }
+  .rotateUp {
+    animation: rotateUp 1s forwards;
+  }
+  .rotateDown{
+    animation: rotateDown 1s forwards;
   }
 
-  .drop_down_list{
-    margin-bottom:45px;
+  @keyframes rotateUp {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(180deg);
+    }
   }
-  ul{
-    // background-color: white;
 
-    width: 400px;
-    height: 100px;
+  @keyframes rotateDown {
+    0%{
+      transform: rotate(180deg);
+    }
+    100%{
+      transform: rotate(0deg);
+    }
+  }
+
+  .list_panel {
+    animation: slideDown 1s forwards;
+  }
+  .list_panel2 {
+    animation: slideUp 1s forwards;
+  }
+  @keyframes slideDown {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 150px;
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      height: 150px;
+    }
+    100% {
+      height: 0;
+    }
+  }
+  .list_label {
+    border: 1px solid $primary;
+    padding: 10px 50px;
+    text-align: center;
+
+  }
+
+  ul {
+    //width: 400px;
     font-size: 20px;
     margin-top: 10px;
-    li{
+    li {
       background-color: #fff;
       list-style: none;
       border: 1px solid $primary;
@@ -101,10 +169,10 @@
       padding: 3px 5px;
       margin: 5px 3px;
       //display: inline;
-      display:block;
+      display: block;
       margin-bottom: 10px;
 
-      i{
+      i {
         color: red;
       }
     }

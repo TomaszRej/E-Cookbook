@@ -4,12 +4,12 @@
   align-items: center;
   justify-content: center;
 
-  input {
-    width: 300px;
+  input[type='checkbox'] {
+    width: 150px;
     height: 45px;
-    font-size: 24px;
+    font-size: 40px;
     color: $dark;
-    //padding: 0 20px;
+    padding: 20px 20px;
   }
   span {
     color: $dark;

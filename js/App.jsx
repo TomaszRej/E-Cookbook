@@ -67,9 +67,6 @@ class App extends React.Component{
                     }
                 })
                     .then(response => response.json())
-                    .then((res) => {
-                        console.log(res, "ODPOWIEDZ");
-                    })
                     .catch(error => console.error('Error:', error));
             }
         });
@@ -93,9 +90,6 @@ class App extends React.Component{
             }
         })
             .then(response => response.json())
-            .then((res) => {
-                console.log(res, "ODPOWIEDZ");
-            })
             .catch(error => console.error('Error:', error));
 
         this.setState({
@@ -197,7 +191,6 @@ class App extends React.Component{
                 throw new Error('Error message?!');
             })
             .then(users => {
-                console.log(users, 'users z didmount');
                 users.forEach((el) => {
                     if (el.name === this.state.globalUserName) {
                         this.setState({
