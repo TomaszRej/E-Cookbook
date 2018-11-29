@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Recipe extends React.Component {
     constructor(props) {
@@ -73,16 +74,16 @@ class Recipe extends React.Component {
                     <h3>
                         {el.title}
                         <span>
-                            <i style={{color: el.isVegetarian ? 'green': 'gray'}} className="fas fa-leaf"/>
+                            <i style={{color: el.isVegetarian ? 'green' : 'gray'}} className="fas fa-leaf"/>
                         </span>
                         <span className='hot'>
                             <i style={{color: el.hotLvl !== 'Łagodny' ? 'red' : 'gray'}}
-                                   className="fab fa-hotjar"/>
+                               className="fab fa-hotjar"/>
                             <i
-                                    style={{color: (el.hotLvl !== 'Łagodny') && (el.hotLvl !== 'Lekko Ostry') ? 'red' : 'gray'}}
-                                    className="fab fa-hotjar"/>
+                                style={{color: (el.hotLvl !== 'Łagodny') && (el.hotLvl !== 'Lekko Ostry') ? 'red' : 'gray'}}
+                                className="fab fa-hotjar"/>
                             <i style={{color: el.hotLvl === 'Mega Ostry' ? 'red' : 'gray'}}
-                                   className="fab fa-hotjar"/>
+                               className="fab fa-hotjar"/>
                         </span>
                     </h3>
                     <div className="description">
@@ -119,5 +120,10 @@ class Recipe extends React.Component {
         );
     }
 }
+
+Recipe.propTypes = {
+    addToFavoritesList: PropTypes.func,
+    removeFromFavoritesList: PropTypes.func
+};
 
 export default Recipe;

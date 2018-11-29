@@ -1,5 +1,6 @@
 import React from 'react';
 import {Redirect} from "react-router-dom";
+import PropTypes from 'prop-types';
 
 class AddProduct extends React.Component {
     constructor(props) {
@@ -184,5 +185,10 @@ class AddProduct extends React.Component {
         );
     }
 }
+AddProduct.propTypes = {
+    globalUserName: PropTypes.string,
+    updateRecipes: PropTypes.func,
+    updateData: PropTypes.func,
+};
 
 export default AddProduct;

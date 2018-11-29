@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-
+import PropTypes from 'prop-types';
 class Favorites extends React.Component {
     render() {
         const favorites = this.props.favorites.map((el)=>{
@@ -20,5 +20,7 @@ class Favorites extends React.Component {
                 </div>);
     }
 }
-
+Favorites.propTypes = {
+    favorites: PropTypes.arrayOf(PropTypes.object),
+};
 export default Favorites;

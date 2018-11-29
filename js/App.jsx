@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import {
     HashRouter,
     Route,
-    Redirect,
-    Link,
     Switch,
-    NavLink,
 } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import Favorites from './components/Favorites.jsx';

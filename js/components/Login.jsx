@@ -1,5 +1,6 @@
 import React from "react";
 import {Redirect} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Login extends React.Component {
     constructor(props) {
@@ -192,9 +193,9 @@ class Login extends React.Component {
                                    type='text' id='userLogin'/>
                             <label htmlFor='password'>Podaj hasło</label>
                             <input placeholder='Podaj hasło' type='password' id='newPassword'
-                                   onChange={this.handleNewPassword}/>
+                                   value={this.state.newPassword} onChange={this.handleNewPassword}/>
                             <input placeholder='Powtórz hasło' type='password' id='repeatPassword'
-                                   onChange={this.handleRepeatPassword}/>
+                                   value={this.state.repeatPassword} onChange={this.handleRepeatPassword}/>
                             <button type='submit'>{text}</button>
                         </form>
                     </div>);
@@ -209,7 +210,7 @@ class Login extends React.Component {
                             <input placeholder='Wpisz imię' value={this.state.userName} onChange={this.handleUserName}
                                    type='text' id='userLogin'/>
                             <label htmlFor='password'>Podaj hasło</label>
-                            <input placeholder='Podaj hasło' type='password' id='password' onChange={this.handlePassword}/>
+                            <input placeholder='Podaj hasło' type='password' value={this.state.password} id='password' onChange={this.handlePassword}/>
                             <button type='submit'>{text}</button>
                         </form>
                     </div>);
@@ -224,5 +225,11 @@ class Login extends React.Component {
         )
     }
 }
+Login.propTypes = {
+    setUserName: PropTypes.func,
+    updateFavoriteList: PropTypes.func,
+};
+
+
 
 export default Login;

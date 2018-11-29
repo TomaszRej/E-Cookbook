@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Recipes extends React.Component {
     handleClickOnHeart = (e) => {
@@ -149,5 +150,15 @@ class Recipes extends React.Component {
         );
     }
 }
+
+Recipes.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.object),
+    globalUserName: PropTypes.string,
+    updateHearts: PropTypes.func,
+    updateWhoLikes: PropTypes.func,
+    updateRecipes: PropTypes.func,
+    filterRecipes: PropTypes.func,
+    onlyVegetarianChecked: PropTypes.bool,
+};
 
 export default Recipes

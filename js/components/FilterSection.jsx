@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-class FilterSection extends React.Component{
+class FilterSection extends React.Component {
     handleChange = (e) => {
-        if(typeof this.props.handleCheckboxChange === 'function'){
+        if (typeof this.props.handleCheckboxChange === 'function') {
             this.props.handleCheckboxChange(e.target.checked);
         }
     };
@@ -16,4 +17,8 @@ class FilterSection extends React.Component{
     }
 }
 
+FilterSection.propTypes = {
+    handleCheckboxChange: PropTypes.func,
+    onlyVegetarianChecked: PropTypes.bool
+};
 export default FilterSection;

@@ -375,6 +375,21 @@
           "instructions": [],
           "id": 16,
           "sort": 0
+        },
+        {
+          "author": "Tomek",
+          "title": "tete",
+          "description": "",
+          "timeToPrepare": 0,
+          "hotLvl": "Stopień ostrości",
+          "isVegetarian": "",
+          "link": "https://via.placeholder.com/150",
+          "likes": 0,
+          "whoLikes": [],
+          "ingredients": [],
+          "instructions": [],
+          "id": 26,
+          "sort": 0
         }
       ]
     },
@@ -498,6 +513,24 @@
           "sort": 0
         }
       ]
+    },
+    {
+      "name": "123",
+      "password": "",
+      "favorites": [],
+      "id": 3
+    },
+    {
+      "name": "teter",
+      "password": "",
+      "favorites": [],
+      "id": 4
+    },
+    {
+      "name": "tere",
+      "password": "z",
+      "favorites": [],
+      "id": 5
     }
   ]
 }

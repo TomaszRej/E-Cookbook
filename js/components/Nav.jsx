@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Nav extends React.Component {
     handleLoginClick = () => {
@@ -47,5 +48,11 @@ class Nav extends React.Component {
         );
     }
 }
+
+Nav.propTypes = {
+    globalUserName: PropTypes.string,
+    resetFavoriteList: PropTypes.func,
+    setUserName: PropTypes.func
+};
 
 export default Nav;
