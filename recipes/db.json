@@ -8,9 +8,10 @@
       "hotLvl": "Lekko Ostry",
       "isVegetarian": "",
       "link": "https://via.placeholder.com/150",
-      "likes": 8,
+      "likes": 16,
       "whoLikes": [
-        "Tomek"
+        "Tomek",
+        "Adam"
       ],
       "ingredients": [
         "jajka",
@@ -131,20 +132,6 @@
       "id": 29
     },
     {
-      "author": "Tomek",
-      "title": "usun",
-      "description": "",
-      "timeToPrepare": 0,
-      "hotLvl": "Stopień ostrości",
-      "isVegetarian": "",
-      "link": "https://via.placeholder.com/150",
-      "likes": 0,
-      "whoLikes": [],
-      "ingredients": [],
-      "instructions": [],
-      "id": 30
-    },
-    {
       "author": "x",
       "title": "wewewewewe",
       "description": "",
@@ -210,8 +197,10 @@
       "hotLvl": "Stopień ostrości",
       "isVegetarian": "",
       "link": "https://via.placeholder.com/150",
-      "likes": 0,
-      "whoLikes": [],
+      "likes": 5,
+      "whoLikes": [
+        "Adam"
+      ],
       "ingredients": [],
       "instructions": [],
       "id": 35
@@ -224,8 +213,10 @@
       "hotLvl": "Stopień ostrości",
       "isVegetarian": "",
       "link": "https://via.placeholder.com/150",
-      "likes": 0,
-      "whoLikes": [],
+      "likes": 2,
+      "whoLikes": [
+        "Adam"
+      ],
       "ingredients": [
         "zz"
       ],
@@ -257,6 +248,49 @@
         "123"
       ],
       "id": 37
+    },
+    {
+      "author": "Tomek",
+      "title": "Pieroghi",
+      "description": "dddddd",
+      "timeToPrepare": "7",
+      "hotLvl": "Mega Ostry",
+      "isVegetarian": true,
+      "link": "https://via.placeholder.com/150",
+      "likes": 8,
+      "whoLikes": [
+        "Tomek",
+        "Adam"
+      ],
+      "ingredients": [
+        "fdf",
+        "dfd"
+      ],
+      "instructions": [
+        "dfdfsdfd",
+        "sdfdfd"
+      ],
+      "id": 38
+    },
+    {
+      "author": "Adam",
+      "title": "trz",
+      "description": "jdjdj",
+      "timeToPrepare": "10",
+      "hotLvl": "Lekko Ostry",
+      "isVegetarian": true,
+      "link": "https://via.placeholder.com/150",
+      "likes": -3,
+      "whoLikes": [],
+      "ingredients": [
+        "majonez",
+        "zz",
+        "z"
+      ],
+      "instructions": [
+        "jajg"
+      ],
+      "id": 39
     }
   ],
   "users": [
@@ -264,134 +298,7 @@
       "id": 1,
       "name": "Tomek",
       "password": "Tomek",
-      "favorites": [
-        {
-          "author": "x",
-          "title": "zzzzzzzz",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 0,
-          "whoLikes": [],
-          "ingredients": [],
-          "instructions": [],
-          "id": 35,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "ceceec",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 2,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Puchatek",
-            "Puchatek",
-            "Puchatek",
-            "Puchatek"
-          ],
-          "ingredients": [],
-          "instructions": [],
-          "id": 21,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "tomek",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": -14,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [],
-          "instructions": [],
-          "id": 25,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "test",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": -5,
-          "whoLikes": [],
-          "ingredients": [],
-          "instructions": [],
-          "id": 27,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "Omletz boczkiem",
-          "description": "",
-          "timeToPrepare": "7",
-          "hotLvl": "Lekko Ostry",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 12,
-          "whoLikes": [
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek",
-            "Tomek"
-          ],
-          "ingredients": [
-            "jajka",
-            "boczek"
-          ],
-          "instructions": [],
-          "id": 16,
-          "sort": 0
-        },
-        {
-          "author": "Tomek",
-          "title": "tete",
-          "description": "",
-          "timeToPrepare": 0,
-          "hotLvl": "Stopień ostrości",
-          "isVegetarian": "",
-          "link": "https://via.placeholder.com/150",
-          "likes": 0,
-          "whoLikes": [],
-          "ingredients": [],
-          "instructions": [],
-          "id": 26,
-          "sort": 0
-        }
-      ]
+      "favorites": []
     },
     {
       "id": 2,
@@ -531,6 +438,36 @@
       "password": "z",
       "favorites": [],
       "id": 5
+    },
+    {
+      "name": "Adam",
+      "password": "zz",
+      "favorites": [
+        {
+          "author": "Adam",
+          "title": "trz",
+          "description": "jdjdj",
+          "timeToPrepare": "10",
+          "hotLvl": "Lekko Ostry",
+          "isVegetarian": true,
+          "link": "https://via.placeholder.com/150",
+          "likes": 4,
+          "whoLikes": [
+            "Adam"
+          ],
+          "ingredients": [
+            "majonez",
+            "zz",
+            "z"
+          ],
+          "instructions": [
+            "jajg"
+          ],
+          "id": 39,
+          "sort": 0
+        }
+      ],
+      "id": 6
     }
   ]
 }
