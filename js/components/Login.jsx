@@ -66,7 +66,7 @@ class Login extends React.Component {
                     const userName = this.state.userName;
                     localStorage.setItem('savedName', userName);
                     if (typeof this.props.setUserName === 'function') {
-                        this.props.setUserName(this.state.userName);
+                        this.props.setUserName(userName);
                     }
                     if (typeof this.props.updateFavoriteList === 'function') {
                         this.props.updateFavoriteList();
@@ -147,8 +147,10 @@ class Login extends React.Component {
                     })
                         .then(response => response.json())
                         .then(() => {
+                            const newUserName = this.state.newUserName;
+                            localStorage.setItem('savedName', newUserName);
                             if (typeof this.props.setUserName === 'function') {
-                                this.props.setUserName(this.state.newUserName);
+                                this.props.setUserName(newUserName);
                             }
                             if (typeof this.props.updateFavoriteList === 'function') {
                                 this.props.updateFavoriteList();
