@@ -83,6 +83,30 @@
       "password": "Puchatek",
       "favorites": [
         {
+          "author": "Puchatek",
+          "title": "Kotlet Schabowy",
+          "description": "Kotlet schabowy babci :)",
+          "timeToPrepare": "45",
+          "hotLvl": "Lekko Ostry",
+          "isVegetarian": "",
+          "link": "https://via.placeholder.com/150",
+          "likes": 0,
+          "whoLikes": [],
+          "ingredients": [
+            "schab bez kości",
+            "mleko",
+            "sól",
+            "pieprz"
+          ],
+          "instructions": [
+            "Ostrym nożem odciąć białą otoczkę z żyłki po zewnętrznej części mięsa. Pokroić na 4 plastry. Położyć na desce i dokładnie roztłuc na cieniutkie filety (mogą wyjść duże, wielkości pół talerza). Do rozbicia mięsa najlepiej użyć specjalnego tłuczka z metalowym obiciem z wytłoczoną krateczką.",
+            "Filety namoczyć w mleku z dodatkiem soli i pieprzu (ewentualnie z dodatkiem kilku plastrów cebuli) przez ok. 2 godziny lub dłużej jeśli mamy czas (można też zostawić do namoczenia na noc).",
+            "Wyjąć filety z mleka i osuszyć je papierowymi ręcznikami. Doprawić solą (niezbyt dużo, bo zalewa z mleka była już solona) i pieprzem, obtoczyć w mące, następnie w roztrzepanym jajku, a na koniec w bułce tartej."
+          ],
+          "id": 3,
+          "sort": 2
+        },
+        {
           "author": "Tomek",
           "title": "Ciasto na pierogi",
           "description": "To najlepszy przepis, aby zrobić idealne ciasto na pierogi. Tego, jak zrobić ciasto na pierogi nauczyła mnie moja babcia. To do niej kiedyś dzwoniłam pytając o proporcje mąki, wody i sekret, który sprawiał, że jej ciasto na pierogi było najlepsze. ",
@@ -104,7 +128,8 @@
             "Mąkę łączę z solą, olejem i ciągle mieszając z mikserze z hakiem lub ręcznie na stolnicy dodaję po trochu bardzo gorąca wodę. Jeśli robicie ręcznie trzeba uważać, żeby się nie poparzyć! Wyrabiam gładkie, elastyczne ciasto łatwo dochodzące od ręki. Przykrywam ściereczką i pozostawiam na 10-15 minut, aby odpoczęło.",
             "Wałkuję i nadziewam ulubionym farszem."
           ],
-          "id": 1
+          "id": 1,
+          "sort": 1
         }
       ]
     }
