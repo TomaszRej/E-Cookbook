@@ -21,11 +21,15 @@
   .description, .author{
     margin: 20px 0;
     display: flex;
-    justify-content: space-between;
+
     color:$dark;
     .description-label, .author-label{
       color:$primary;
+      margin-right: 53px;
     }
+  }
+  .author .author-label{
+    margin-right: 45px;
   }
   .lists{
     display: flex;
@@ -34,13 +38,20 @@
       color: $primary;
       font-weight: normal;
       margin-bottom: 5px;
+      margin-right: 20px;
     }
     ul{
+      margin-right: 20px;
       li{
         list-style: none;
         color:$dark;
+        margin-bottom: 20px;
+      }
+      .listOfIngredients{
+        margin-bottom: 10px;
       }
     }
+
   }
   button {
     color: $primary;

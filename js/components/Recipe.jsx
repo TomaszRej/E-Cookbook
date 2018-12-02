@@ -64,10 +64,10 @@ class Recipe extends React.Component {
             const ingredients = [];
             const instructions = [];
             for (const i of el.ingredients) {
-                ingredients.push(<li>{i}</li>)
+                ingredients.push(<li className='listOfIngredients'>{i}</li>)
             }
             for (const i of el.instructions) {
-                instructions.push(<li>{i}</li>);
+                instructions.push(<li >{i}</li>);
             }
             element = (
                 <div key={el.id}>
