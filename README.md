@@ -29,7 +29,7 @@ In order to run this project on your desktop you will have to:
 * user can add any recipe to his favorites list and then at any time remove it from the list
 * logged user can add his own recipe by clicking the add button and filling in the form
 * on recipe added by user is remove button so user can delete this recipe at any time
-
+<br/>
 ![Alt text](./images/Home.png?raw=true "Home View")
 <br/>
 ![Alt text](./images/Search.png?raw=true "Search View")
