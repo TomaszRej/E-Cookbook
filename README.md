@@ -3,7 +3,6 @@
 ### Technologies used for this project:
 * [Sass](https://sass-lang.com/)
 * [React](https://reactjs.org/)
-* [Redux](https://redux.js.org/)
 * [json-server](https://github.com/typicode/json-server)
 
 ### Configuration
